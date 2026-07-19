@@ -1,0 +1,14 @@
+{
+    "Escaped quotes": {
+        "prefix" : "comquo",
+        "body": "\\\"$1\\\"",
+        "description": "Paste shielded double quotes"
+    },
+    "Quick map in normal mode": {
+        "prefix": ["mapn", "map"],
+        "body": [
+            "map(\"n\", \"\")"
+        ],
+        "description": "Insert map snippet"
+    }
+}

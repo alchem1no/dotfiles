@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Usage: thunar-archive <zip|targz|tarzst> file...
+set -euo pipefail
+
+fmt="$1"; shift
+(($#)) || exit 0
+
+if (($# == 1)); then
+    base="$(basename "$1")"
+    [[ -d $1 ]] || base="${base%.*}"
+    [[ -z $base ]] && base="$(basename "$1")"
+else
+    base="$(basename "$PWD")"
+fi
+
+case "$fmt" in
+    zip)          ext="zip"     ;;
+    targz)        ext="tar.gz"  ;;
+    tarzst)       ext="tar.zst" ;;
+    tarzst-ultra) ext="tar.zst" ;;
+    *)            exit 1        ;;
+esac
+
+out="$base.$ext"
+i=1
+while [[ -e $out ]]; do
+    out="$base-$i.$ext"
+    ((i++))
+done
+
+case "$fmt" in
+    zip)    zip -r -q "$out" "$@"     ;;
+    targz)  tar -czf "$out" -- "$@"   ;;
+    tarzst) ZSTD_CLEVEL=12 ZSTD_NBTHREADS=0 tar --zstd -cf "$out" -- "$@" ;;
+    tarzst-ultra) tar -cf - -- "$@" | zstd -T0 --ultra -22 --long=27 -o "$out" ;;
+esac
+
+notify-send "Thunar" "Created $out" --icon package-x-generic

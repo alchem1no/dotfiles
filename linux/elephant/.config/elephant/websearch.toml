@@ -1,0 +1,82 @@
+always_show_default = true
+command = 'xdg-open'
+engines_as_actions = false
+history = true
+history_when_empty = false
+text_prefix = 'Search: '
+
+# Search engines
+
+[[entries]]
+default = true
+name = 'Search in Google'
+url = 'https://www.google.com/search?q=%TERM%'
+icon = 'google-scalable'
+
+[[entries]]
+name = 'Search in DuckDuckGo'
+prefix = 'ddg '
+url = 'https://duckduckgo.com/?q=%TERM%'
+icon = 'duckduckgo-scalable'
+
+[[entries]]
+name = 'Search in Brave'
+prefix = 'br '
+url = 'https://search.brave.com/search?q=%TERM%'
+icon = 'brave-scalable'
+
+[[entries]]
+name = 'Search in Yandex'
+prefix = 'ya '
+url = 'https://yandex.com/search/?text=%TERM%'
+icon = 'yandex-scalable'
+
+# Other searches
+
+[[entries]]
+name = 'Search in Wikipedia'
+prefix = 'wp '
+url = 'https://en.wikipedia.org/wiki/Special:Search?search=%TERM%'
+icon = 'wikipedia-scalable'
+
+[[entries]]
+name = 'Search in Wiktionary'
+prefix = 'wt '
+url = 'https://en.wiktionary.org/wiki/Special:Search?search=%TERM%'
+icon = 'wiktionary-scalable'
+
+[[entries]]
+name = 'Search in Arch Wiki'
+prefix = 'aw '
+url = 'https://wiki.archlinux.org/index.php?search=%TERM%'
+icon = 'archlinux-scalable'
+
+[[entries]]
+name = 'Search in AUR'
+prefix = 'aur '
+url = 'https://aur.archlinux.org/packages?K=%TERM%'
+icon = 'archlinux-scalable'
+
+[[entries]]
+name = 'Search in GitHub'
+prefix = 'gh '
+url = 'https://github.com/search?q=%TERM%&type=repositories'
+icon = 'github-scalable'
+
+[[entries]]
+name = 'Search in YouTube'
+prefix = 'yt '
+url = 'https://www.youtube.com/results?search_query=%TERM%'
+icon = 'youtube-scalable'
+
+# [[entries]]
+# name = 'Search in Nixpkgs'
+# prefix = 'nogle '
+# url = 'https://www.google.com/search?q=%TERM%'
+# icon = 'nixos-scalable'
+
+[Config]
+hide_from_providerlist = false
+icon = 'applications-internet'
+min_score = 20
+# name_pretty = ''

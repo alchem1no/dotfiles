@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# screen-toggle - blank the screen, or wake it.
+# Blanking is delayed so the compositor's fade animation can finish first.
+
+set -euo pipefail
+
+if wlopm | grep -q ' on$'; then
+    sleep 0.5
+    wlopm --off '*'
+else
+    wlopm --on '*'
+fi

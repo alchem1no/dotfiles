@@ -1,0 +1,12 @@
+root = true
+
+[*]
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.lua]
+indent_size = 4
+
+[*.{css,scss,html,json,yml,yaml,toml}]
+indent_size = 2

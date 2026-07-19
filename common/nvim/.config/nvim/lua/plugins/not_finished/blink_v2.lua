@@ -1,0 +1,78 @@
+return {
+    {
+        "saghen/blink.lib",
+    },
+
+    {
+        "saghen/blink.cmp",
+
+        dependencies = {
+            "saghen/blink.lib",
+            "L3MON4D3/LuaSnip",
+            "rafamadriz/friendly-snippets",
+        },
+
+        opts = {
+            snippets = {
+                preset = "luasnip",
+            },
+
+            fuzzy = {
+                implementation = "prefer_rust",
+            },
+
+            keymap = {
+                preset = "default",
+            },
+
+            completion = {
+                documentation = {
+                    auto_show = false,
+                },
+            },
+
+            sources = {
+                default = {
+                    "lsp",
+                    "path",
+                    "snippets",
+                    "buffer",
+                },
+            },
+        },
+
+        config = function(_, opts)
+            require("blink.cmp").setup(opts)
+
+            vim.keymap.set({ "i", "s" }, "<Tab>", function()
+                if ls.expand_or_jumpable() then
+                    ls.expand_or_jump()
+                else
+                    vim.api.nvim_feedkeys(
+                        vim.api.nvim_replace_termcodes("<Tab>", true, false, true),
+                        "n",
+                        true
+                    )
+                end
+            end, { silent = true })
+
+            vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+                if ls.jumpable(-1) then
+                    ls.jump(-1)
+                else
+                    vim.api.nvim_feedkeys(
+                        vim.api.nvim_replace_termcodes("<S-Tab>", true, false, true),
+                        "n",
+                        true
+                    )
+                end
+            end, { silent = true })
+
+            vim.keymap.set({ "i", "s" }, "<C-E>", function()
+                if ls.choice_active() then
+                    ls.change_choice(1)
+                end
+            end, { silent = true })
+        end
+    },
+}

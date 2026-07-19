@@ -1,0 +1,18 @@
+#!/bin/bash
+
+prev=$(wl-paste --no-newline 2>/dev/null)
+emoji=$(bemoji-launcher -e -n)
+
+[ -z "$emoji" ] && exit 0 # user cancelled, do nothing
+
+wl-copy "$emoji"
+ydotool key 29:1 47:1 47:0 29:0
+sleep 0.5
+
+if [ -n "$prev" ]; then
+    printf "%s" "$prev" | wl-copy
+else
+    wl-copy --clear
+fi
+
+cliphist list | grep -F "$emoji" | head -1 | cliphist delete

@@ -1,0 +1,9 @@
+Programs to install for correct Nvim work:
+
+- fzf
+- stylua
+- im-select (Win, Mac)
+scoop bucket add scoop-it https://github.com/younger-1/scoop-it
+scoop install im-select
+- xkb-switch (Linux)
+- ripgrep (Windows: winget install BurntSushi.ripgrep.MSVC)

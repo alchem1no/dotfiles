@@ -1,0 +1,13 @@
+auto_cleanup = 60
+command = 'walker-paste'
+ignore_symbols = true
+image_editor_cmd = 'gimp %FILE%'
+max_items = 100
+pinned_on_top = true
+text_editor_cmd = 'neovide %FILE%'
+
+[Config]
+hide_from_providerlist = false
+icon = 'user-bookmarks'
+min_score = 30
+# name_pretty = ''

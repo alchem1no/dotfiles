@@ -1,0 +1,16 @@
+#!/bin/bash
+
+prev=$(wl-paste --no-newline 2>/dev/null)
+selected=$(cliphist list | fuzzel --dmenu)
+
+[ -z "$selected" ] && exit 0 # user cancelled, do nothing
+
+cliphist decode <<< "$selected" | wl-copy
+ydotool key 29:1 47:1 47:0 29:0
+sleep 0.5
+
+if [ -n "$prev" ]; then
+    printf "%s" "$prev" | wl-copy
+else
+    wl-copy --clear
+fi

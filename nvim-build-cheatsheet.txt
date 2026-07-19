@@ -1,0 +1,15 @@
+# Remove older Neovim version
+sudo apt remove neovim
+
+# Install
+git clone https://github.com/neovim/neovim
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+
+# Update Neovim
+cd neovim
+git pull
+make CMAKE_BUILD_TYPE=Release
+sudo make install

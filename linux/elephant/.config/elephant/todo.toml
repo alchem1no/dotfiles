@@ -1,0 +1,18 @@
+location = "~/.local/share/elephant/todo.csv"
+time_format = "02-Jan 15:04"
+urgent_time_frame = 10
+title = "Task Due"
+body = "%TASK%"
+
+duck_player_volumes = true
+show_creation_time = true
+
+[[categories]]
+name = "Architude"
+prefix = "a"
+
+[Config]
+hide_from_providerlist = false
+# icon = ''
+min_score = 50
+# name_pretty = ""

@@ -1,0 +1,36 @@
+# Local/private overrides
+lua/local.lua
+lua/config/local.lua
+
+# Session files
+Session.vim
+session/
+
+# Swap/backup files
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Neovide local state
+neovide.json
+
+# Plugin manager lockfile
+# lazy-lock.json
+
+# LSP logs
+lsp.log
+
+# Temporary/debug files
+tmp/
+.cache/
+
+# Rocks
+.luarocks/
+
+# Testing playground
+scratch/
+test.lua

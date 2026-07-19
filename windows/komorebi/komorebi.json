@@ -1,0 +1,104 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
+    "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+    "bar_configurations": [],
+    "animation": {
+        "enabled": false,
+        "duration": 250,
+        "fps": 60,
+        "style": "EaseOutExpo"
+    },
+    "mouse_follows_focus": false,
+    "cross_monitor_move_behaviour": "Insert",
+    "transparency": true,
+    "transparency_alpha": 220,
+    "default_workspace_padding": 6,
+    "default_container_padding": 6,
+    "global_work_area_offset": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+    },
+    "border": true,
+    "border_width": 6,
+    "border_offset": -1,
+    "theme": {
+        "palette": "Base16",
+        "name": "TokyoNightDark",
+        "single_border": "Base0E",
+        "stack_border": "Base0B",
+        "monocle_border": "Base0F",
+        "floating_border": "Base09",
+        "unfocused_border": "Base03",
+        "unfocused_locked_border": "Base08",
+        "bar_accent": "Base0D"
+    },
+    "manage_rules": [
+        {
+            "kind": "Exe",
+            "id": "claude.exe",
+            "matching_strategy": "Equals"
+        },
+        {
+            "kind": "Exe",
+            "id": "mscopilot.exe",
+            "matching_strategy": "Equals"
+        },
+        {
+            "kind": "Exe",
+            "id": "deadbeef.exe",
+            "matching_strategy": "Equals"
+        },
+        {
+            "kind": "Class",
+            "id": "TaskManagerWindow",
+            "matching_strategy": "Equals"
+        }
+    ],
+    "remove_titlebar_applications": [
+        {
+            "kind": "Exe",
+            "id": "neovide.exe",
+            "matching_strategy": "Equals"
+        }
+    ],
+    "monitors": [
+        {
+            "workspaces": [
+                {
+                    "name": "1  ",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "2  ",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "3  ",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "4  ",
+                    "layout": "Grid"
+                },
+                {
+                    "name": "5  ",
+                    "layout": "Grid"
+                },
+                {
+                    "name": "6 󰂽 ",
+                    "layout": "VerticalStack"
+                },
+                {
+                    "name": "7  ",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "8  ",
+                    "layout": "BSP"
+                }
+            ]
+        }
+    ]
+}

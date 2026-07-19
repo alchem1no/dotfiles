@@ -1,0 +1,76 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.bar.json",
+  "font_family": "Cascadia Mono",
+  "height": 0,
+  "padding_top": 0,
+  "padding_bottom": 0,
+  "theme": {
+    "palette": "Base16",
+    "name": "TokyoNightDark",
+    "accent": "Base0D"
+  },
+  "transparency_alpha": 220,
+  "left_widgets": [
+    {
+      "Komorebi": {
+        "workspaces": {
+          "enable": true,
+          "hide_empty_workspaces": false
+        },
+        "layout": {
+          "enable": true
+        },
+        "focused_window": {
+          "enable": true,
+          "show_icon": true
+        }
+      }
+    }
+  ],
+  "right_widgets": [
+    {
+      "Update": {
+        "enable": true
+      }
+    },
+    {
+      "Media": {
+        "enable": false
+      }
+    },
+    {
+      "Storage": {
+        "enable": false
+      }
+    },
+    {
+      "Memory": {
+        "enable": false
+      }
+    },
+    {
+      "Network": {
+        "enable": false,
+        "show_activity": true,
+        "show_total_activity": true
+      }
+    },
+    {
+      "Date": {
+        "enable": true,
+        "format": "DayDateMonthYear"
+      }
+    },
+    {
+      "Time": {
+        "enable": true,
+        "format": "TwentyFourHour"
+      }
+    },
+    {
+      "Battery": {
+        "enable": true
+      }
+    }
+  ]
+}

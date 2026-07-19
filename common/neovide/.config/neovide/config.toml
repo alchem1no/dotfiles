@@ -1,0 +1,12 @@
+# maximized = true
+vsync = true
+idle = true
+# grid = "105x32"
+# frame = "none"
+
+[font]
+normal = { family = "CaskaydiaCove Nerd Font" }
+size = 14
+
+[box-drawing]
+mode = "font-glyph"

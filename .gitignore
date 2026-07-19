@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+
+*.log
+tmp/
+cache/
+nvim/.init.lua.un~
+*.db
+/linux/local-bin/.local/bin/appimage/
+yasb.log*
+photogimp/.config/GIMP/3.0/backups/
+photogimp/.config/GIMP/3.0/CrashLog/

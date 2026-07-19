@@ -1,0 +1,3 @@
+#!/bin/bash
+wl-copy
+ydotool key 29:1 47:1 47:0 29:0
