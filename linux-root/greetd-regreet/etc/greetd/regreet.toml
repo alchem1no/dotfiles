@@ -1,0 +1,27 @@
+skip_selection = true
+
+[background]
+path = "/usr/share/backgrounds/tokyonight.png"
+fit = "Cover"
+
+[GTK]
+application_prefer_dark_theme = true
+
+theme_name = "Tokyonight-Purple-Dark"
+icon_theme_name = "oomox-Tokyonight-Dark"
+cursor_theme_name = "Bibata-Modern-Classic"
+font_name = "CaskaydiaCove Nerd Font 12"
+
+[commands]
+suspend = [ "systemctl", "suspend" ]
+reboot = [ "systemctl", "reboot" ]
+poweroff = [ "systemctl", "poweroff" ]
+
+[appearance]
+greeting_msg = "Welcome back, user."
+
+[widget.clock]
+format = "%a %H:%M"
+resolution = "500ms"
+# label width = 
+# locale = "en_US"
