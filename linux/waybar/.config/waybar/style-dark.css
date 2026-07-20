@@ -26,12 +26,12 @@
 
 /* These styles will apply to everything */
 * {
-    font-family: CaskaydiaCove Nerd Font;
-    font-size: 13px;
+  font-family: CaskaydiaCove Nerd Font;
+  font-size: 13px;
 
-    color: @fg;
+  color: @fg;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* General settings for all modules */
@@ -56,17 +56,17 @@
 #window,
 #wireplumber
 {
-    padding:    0 10px;
-    background: @bg;
-    border:     2px solid @fg;
+  padding:    0 10px;
+  background: @bg;
+  border:     2px solid @fg;
 
-    transition: background 0.2s ease;
+  transition: background 0.2s ease;
 }
 #keyboard-state {
-    padding: 0;
-    background: @bg;
+  padding: 0;
+  background: @bg;
 
-    transition: background 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 #backlight:hover,
@@ -90,41 +90,41 @@
 #window:hover,
 #wireplumber:hover
 {
-    background: @bg_highlight;
+  background: @bg_highlight;
 }
 
 /* Waybar transparent BG */
 window#waybar {
-    background-color: transparent;
+  background-color: transparent;
 
-    transition-property: background-color;
-    transition-duration: .5s;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 window#waybar.empty #window {
-    background: transparent;
-    border:     none;
+  background: transparent;
+  border:     none;
 }
 
 /* Hyprland submap settings */
 #mode {
-    background-color: @bg;
+  background-color: @bg;
 }
 
 /* General style for buttons */
 button {
-    padding:    0 8px;
-    margin:     0 2px;
-    min-width:  18px;
-    min-height: 0;
+  padding:    0 8px;
+  margin:     0 2px;
+  min-width:  18px;
+  min-height: 0;
 
-    border: 2px solid @fg;
-    background-color: @bg;
+  border: 2px solid @fg;
+  background-color: @bg;
 }
 button:hover {
-    background: @bg_highlight;
+  background: @bg_highlight;
 }
 
 /* TOP BAR */
@@ -132,271 +132,271 @@ button:hover {
 /* LEFT */
 
 #custom-launcher {
-    padding-left:  7px;
-    padding-right: 11px;
-    margin-right:  3px;
+  padding-left:  7px;
+  padding-right: 11px;
+  margin-right:  3px;
 
-    font-size: 16px;
+  font-size: 16px;
 
-    color:        @blue;
-    border-color: @blue;
+  color:        @blue;
+  border-color: @blue;
 }
 
 #workspaces {
-    margin: 0 3px 0;
+  margin: 0 3px 0;
 }
 #workspaces button {
-    padding-left:  6px;
-    padding-right: 3px;
+  padding-left:  6px;
+  padding-right: 3px;
 }
 #workspaces button:hover {
-    background: @bg_highlight;
+  background: @bg_highlight;
 }
 
 #workspaces button.empty {
-    border-color: @comment;
+  border-color: @comment;
 }
 #workspaces button.empty label {
-    color: @comment;
+  color: @comment;
 }
 
 #workspaces button.active {
-    border-color: @teal;
+  border-color: @teal;
 }
 #workspaces button.active label {
-    color: @teal;
+  color: @teal;
 }
 
 #workspaces button.urgent {
-    border-color: @red;
+  border-color: @red;
 }
 
 #cpu {
-    padding-left: 6px;
-    color:        @green;
-    border-color: @green;
-    margin-left:  3px;
+  padding-left: 6px;
+  color:        @green;
+  border-color: @green;
+  margin-left:  3px;
 }
 
 #memory {
-    padding-left:  6px;
-    padding-right: 12px;
-    color:        @magenta;
-    border-color: @magenta;
+  padding-left:  6px;
+  padding-right: 12px;
+  color:        @magenta;
+  border-color: @magenta;
 }
 
 #disk {
-    padding-left: 6px;
-    color:        @blue;
-    border-color: @blue;
+  padding-left: 6px;
+  color:        @blue;
+  border-color: @blue;
 }
 
 #temperature {
-    padding-left: 6px;
-    color:        @orange;
-    border-color: @orange;
-    margin-right: 3px;
+  padding-left: 6px;
+  color:        @orange;
+  border-color: @orange;
+  margin-right: 3px;
 }
 #temperature.critical {
-    color:        @red;
-    border-color: @red;
+  color:        @red;
+  border-color: @red;
 }
 
 /* CENTER */
 
 #clock {
-    color:        @cyan;
-    border-color: @cyan;
+  color:        @cyan;
+  border-color: @cyan;
 
-    padding: 4px 4px;
-    margin:  0 4px 0;
+  padding: 4px 4px;
+  margin:  0 4px 0;
 }
 
 /* RIGHT */
 
 #idle_inhibitor {
-    padding: 0 6px 0 7px;
-    margin: 0 3px 0;
+  padding: 0 6px 0 7px;
+  margin: 0 3px 0;
 }
 #idle_inhibitor.activated {
-    color:        @green;
-    border-color: @green;
+  color:        @green;
+  border-color: @green;
 }
 
 /*
 #keyboard-state > label.numlock {
-    color: @comment;
-    border: 2px solid @comment;
-    padding: 0 6px 0;
+  color: @comment;
+  border: 2px solid @comment;
+  padding: 0 6px 0;
 }
 #keyboard-state > label.numlock.locked {
-    color: @orange;
-    border: 2px solid @orange;
-    padding: 0 6px 0;
+  color: @orange;
+  border: 2px solid @orange;
+  padding: 0 6px 0;
 }
 #keyboard-state > label.capslock {
-    color: @comment;
-    border: 2px solid @comment;
-    padding: 0 6px 0;
+  color: @comment;
+  border: 2px solid @comment;
+  padding: 0 6px 0;
 }
 #keyboard-state > label.capslock.locked {
-    color: @blue;
-    border: 2px solid @blue;
-    padding: 0 6px 0;
+  color: @blue;
+  border: 2px solid @blue;
+  padding: 0 6px 0;
 }
 */
 
 #custom-numlock {
-    padding: 0 4px 0;
-    margin-left: 3px;
+  padding: 0 4px 0;
+  margin-left: 3px;
 }
 #custom-numlock.locked {
-    color:        @orange;
-    border-color: @orange;
+  color:        @orange;
+  border-color: @orange;
 }
 
 #language {
-    color:        @purple;
-    border-color: @purple;
-    padding:      0 6px 0;
-    margin-right: 3px;
+  color:        @purple;
+  border-color: @purple;
+  padding:      0 6px 0;
+  margin-right: 3px;
 }
 
 #tray {
-    background-color: @bg;
-    color:            @blue;
-    border: 2px solid @blue;
-    margin: 0 3px 0;
+  background-color: @bg;
+  color:            @blue;
+  border: 2px solid @blue;
+  margin: 0 3px 0;
 }
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: @orange;
+  -gtk-icon-effect: highlight;
+  background-color: @orange;
 }
 
 #backlight {
-    color:         @fg_dark;
-    border-color:  @fg_dark;
-    padding-left:  6px;
-    padding-right: 8px;
-    margin-left:   3px;
+  color:         @fg_dark;
+  border-color:  @fg_dark;
+  padding-left:  6px;
+  padding-right: 8px;
+  margin-left:   3px;
 }
 
 /* Audio */
 #wireplumber {
-    color:         @yellow;
-    border-color:  @yellow;
-    padding-left:  6px;
-    padding-right: 13px;
+  color:         @yellow;
+  border-color:  @yellow;
+  padding-left:  6px;
+  padding-right: 13px;
 }
 #wireplumber.muted {
-    color:         @red;
-    border-color:  @red;
-    padding-left:  8px;
-    padding-right: 12px;
+  color:         @red;
+  border-color:  @red;
+  padding-left:  8px;
+  padding-right: 12px;
 }
 
 #network {
-    padding-left:  6px;
-    padding-right: 3px;
+  padding-left:  6px;
+  padding-right: 3px;
 
-    color:        @cyan;
-    border-color: @cyan;
+  color:        @cyan;
+  border-color: @cyan;
 }
 #network.ethernet {
-    padding-left:  8px;
-    padding-right: 2px;
+  padding-left:  8px;
+  padding-right: 2px;
 }
 #network.disconnected {
-    padding-left:  7px;
-    padding-right: 3px;
+  padding-left:  7px;
+  padding-right: 3px;
 
-    color:        @red;
-    border-color: @red;
+  color:        @red;
+  border-color: @red;
 }
 #network.disabled {
-    padding-left:  8px;
-    padding-right: 2px;
+  padding-left:  8px;
+  padding-right: 2px;
 
-    color:        @red;
-    border-color: @red;
+  color:        @red;
+  border-color: @red;
 }
 
 #bluetooth {
-    font-size: 18px;
+  font-size: 18px;
 
-    padding-left:  9px;
-    padding-right: 9px;
+  padding-left:  9px;
+  padding-right: 9px;
 }
 #bluetooth.connected {
-    color:        @cyan;
-    border-color: @cyan;
-    padding-left:  8px;
-    padding-right: 10px;
+  color:        @cyan;
+  border-color: @cyan;
+  padding-left:  8px;
+  padding-right: 10px;
 }
 
 #battery {
-    color:        @blue;
-    border-color: @blue;
-    padding: 0 12px 0 8px;
-    margin-right: 3px;
+  color:        @blue;
+  border-color: @blue;
+  padding: 0 12px 0 8px;
+  margin-right: 3px;
 }
 #battery.charging,
 #battery.plugged {
-    color:        @teal;
-    border-color: @teal;
-    padding: 0 9px 0 8px;
+  color:        @teal;
+  border-color: @teal;
+  padding: 0 9px 0 8px;
 }
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    color:        @red;
-    border-color: @red;
+  color:        @red;
+  border-color: @red;
 
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction:       alternate;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction:       alternate;
 }
 @keyframes blink {
-    to {
-        color:        @fg;
-        border-color: @fg;
-    }
+  to {
+    color:        @fg;
+    border-color: @fg;
+  }
 }
 
 #custom-power {
-    font-size:     14px;
-    padding-left:  8px;
-    padding-right: 11px;
-    margin-left:   3px;
-    margin-right:  0px;
+  font-size:     14px;
+  padding-left:  8px;
+  padding-right: 11px;
+  margin-left:   3px;
+  margin-right:  0px;
 
-    color:        @red;
-    border-color: @red;
+  color:        @red;
+  border-color: @red;
 }
 
 menu {
-    padding:   4px;
-    font-size: 20px;
+  padding:   4px;
+  font-size: 20px;
 }
 
 menu menuitem {
-    padding:    4px 0px;
-    min-height: 0;
+  padding:    4px 0px;
+  min-height: 0;
 }
 
 menu menuitem check,
 menu menuitem radio {
-    margin:     0;
-    min-width:  0;
-    min-height: 0;
+  margin:     0;
+  min-width:  0;
+  min-height: 0;
 }
 
 menu separator {
-    margin: 3px 10px;
+  margin: 3px 10px;
 }
 
 /* LOWER BAR */
@@ -404,71 +404,71 @@ menu separator {
 /* LEFT */
 
 window#waybar.bottom-bar #window {
-    margin-right: 4px;
-    min-width:    20px;
+  margin-right: 4px;
+  min-width:    20px;
 }
 #window {
-    border-color: @magenta;
+  border-color: @magenta;
 }
 #window label {
-    color: @magenta;
+  color: @magenta;
 }
 
 /* RIGHT */
 
 window#waybar.bottom-bar #mpris {
-    margin-left: 4px;
+  margin-left: 4px;
 }
 #mpris {
-    color:        @fg;
-    border-color: @fg;
+  color:        @fg;
+  border-color: @fg;
 }
 #mpris.playing {
-    color:        @green;
-    border-color: @green;
+  color:        @green;
+  border-color: @green;
 }
 #mpris.paused {
-    color:        @blue;
-    border-color: @blue;
+  color:        @blue;
+  border-color: @blue;
 }
 #mpris.stopped {
-    color:        @fg;
-    border-color: @fg;
+  color:        @fg;
+  border-color: @fg;
 }
 
 /* Disabled modules */
 
 /*
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+  background-color: #66cc99;
+  color: #2a5c45;
 }
 #mpd.disconnected {
-    background-color: #f53c3c;
+  background-color: #f53c3c;
 }
 #mpd.stopped {
-    background-color: #90b1b1;
+  background-color: #90b1b1;
 }
 #mpd.paused {
-    background-color: #51a37a;
+  background-color: #51a37a;
 }
 */
 
 /*
 #privacy {
-    padding: 0;
+  padding: 0;
 }
 #privacy-item {
-    padding: 0 5px;
-    color: white;
+  padding: 0 5px;
+  color: white;
 }
 #privacy-item.screenshare {
-    background-color: #cf5700;
+  background-color: #cf5700;
 }
 #privacy-item.audio-in {
-    background-color: #1ca000;
+  background-color: #1ca000;
 }
 #privacy-item.audio-out {
-    background-color: #0069d4;
+  background-color: #0069d4;
 }
 */
