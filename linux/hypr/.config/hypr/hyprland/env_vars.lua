@@ -10,8 +10,9 @@ hl.env("PATH", os.getenv("PATH")
 )
 
 -- hl.env("WLR_NO_HARDWARE_CURSORS", "1")
--- hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
--- hl.env("HYPRCURSOR_SIZE", "20")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("HYPRCURSOR_SIZE", "128")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("XCURSOR_SIZE", "20")
+hl.env("XCURSOR_SIZE", "128")
+
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")

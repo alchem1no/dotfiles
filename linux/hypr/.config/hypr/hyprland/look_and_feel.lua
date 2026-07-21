@@ -401,7 +401,7 @@ hl.config({
         zoom_factor = 1.0,
         zoom_rigid = false,
         zoom_detached_camera = true,
-        enable_hyprcursor = false, -- Change this back
+        enable_hyprcursor = true,
         hide_on_key_press = false,
         hide_on_touch = true,
         hide_on_tablet = true,
