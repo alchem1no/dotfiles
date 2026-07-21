@@ -110,7 +110,7 @@ hl.gesture({
 })
 
 hl.device({
-    name        = "alpsps/2-alps-glidepoint",
-    sensitivity = 0.2,
+    name          = "alpsps/2-alps-glidepoint",
+    sensitivity   = 0.2,
     scroll_factor = 0.5,
 })
