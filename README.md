@@ -50,6 +50,7 @@ Not ready yet.
 
 ## To-Do
 
+- [ ] Make Hyprland animations slower
 - [x] Fix Neovide's config.toml not working
 - [x] Configure Hyprcursor
 - [ ] Fix Elephant clipboard provider
