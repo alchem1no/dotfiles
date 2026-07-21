@@ -9,7 +9,8 @@ vt = 1
 # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
 # with whatever you want started, such as `sway`.
 # command = "sh -c 'env WLR_DRM_NO_ATOMIC=1 dbus-run-session sway --config /etc/greetd/sway-config > /var/log/greetd-greeter.log 2>&1'"
-command = "sh -c 'env WLR_DRM_NO_ATOMIC=1 dbus-run-session start-hyprland -- -c /etc/greetd/hyprland-login.lua > /var/log/greetd-greeter.log 2>&1'"
+# command = "sh -c 'env WLR_DRM_NO_ATOMIC=1 dbus-run-session start-hyprland -- -c /etc/greetd/hyprland-login.lua > /var/log/greetd-greeter.log 2>&1'"
+command = "sh -c 'env WLR_DRM_NO_ATOMIC=1 dbus-run-session start-hyprland -- -c /etc/greetd/hyprland-login.lua'"
 
 # The user to run the command as. The privileges this user must have depends
 # on the greeter. A graphical greeter may for example require the user to be
