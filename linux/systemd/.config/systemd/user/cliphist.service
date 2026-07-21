@@ -1,0 +1,12 @@
+# My custom service
+[Unit]
+Description=Clipbord history via cliphist
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wl-paste --watch cliphist store
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

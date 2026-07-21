@@ -8,7 +8,6 @@ require("hyprland.reload_config_keybind")
 local try_require = require("lib.try_require")
 
 -- Load configs
-try_require("hyprland.env_vars")
 try_require("hyprland.monitors")
 try_require("hyprland.permissions")
 try_require("hyprland.autostart")

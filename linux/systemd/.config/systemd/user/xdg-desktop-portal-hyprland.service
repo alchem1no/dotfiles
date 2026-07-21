@@ -1,0 +1,13 @@
+[Unit]
+Description=Portal service (Hyprland implementation)
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.impl.portal.desktop.hyprland
+ExecStartPre=/bin/sleep 2
+ExecStart=/usr/lib/xdg-desktop-portal-hyprland
+Restart=on-failure
+Slice=session.slice

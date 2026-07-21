@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Happ
+GenericName=Happ Frontend
+Exec=/opt/happ/bin/Happ --autostart
+Terminal=false
+Icon=happ
+Categories=Network
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
