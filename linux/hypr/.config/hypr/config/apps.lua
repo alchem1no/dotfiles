@@ -1,7 +1,6 @@
 local M = {}
 
 M.system_info           = "hyprsysteminfo"
-M.polkit_agent          = "systemctl --user start hyprpolkitagent"
 M.idle_daemon           = "hypridle"
 M.notification_manager  = "dunst"
 M.blue_light_filter     = "hyprsunset"
@@ -11,6 +10,8 @@ M.bar                   = "waybar"
 M.terminal  = "kitty"
 M.terminal2 = "footclient"
 
+M.terminal2_server = "foot --server"
+
 M.terminal_secondary_shell  = M.terminal  .. " -e pwsh -NoLogo"
 M.terminal2_secondary_shell = M.terminal2 .. " -e pwsh -NoLogo"
 
@@ -18,6 +19,7 @@ M.file_manager_gui  = "thunar"
 M.file_manager_cli  = M.terminal .. " -e yazi"
 
 M.launcher         = "walker"
+M.launcher_service = "walker --gapplication-service"
 M.launcher_backend = "elephant"
 M.launcher_open    = "nc -U /run/user/$(id -u)/walker/walker.sock"
 M.launcher_apps    = "walker -m desktopapplications"

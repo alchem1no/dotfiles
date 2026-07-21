@@ -52,7 +52,14 @@ Not ready yet.
 
 - [x] Fix Neovide's config.toml not working
 - [x] Configure Hyprcursor
+- [ ] Fix Elephant clipboard provider
+- [ ] Make Elephant providers paste text through ydotool:
+    - [ ] clipboard
+    - [ ] symbols
+    - [ ] unicode
 - [ ] Fix cursor theme not working in some applications
+- [ ] Fix Thunar freezes
+- [ ] Fix Log Out button in Waybar power menu not working properly
 - [ ] Add and/or configure:
     - [x] Zsh
     - [x] PowerShell
@@ -79,3 +86,4 @@ Not ready yet.
     - [ ] udiskie
     - [ ] scrcpy/Escrcpy
     - [ ] Matrix client
+    - [ ] IRC app

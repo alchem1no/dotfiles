@@ -1,0 +1,12 @@
+# My custom service
+[Unit]
+Description=Clipboard persistence
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=wl-clip-persist --clipboard regular
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
