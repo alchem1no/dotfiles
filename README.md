@@ -74,7 +74,7 @@ Not ready yet.
 
     - [x] DeadBeeF
     - [x] OpenTabletDriver
-    - wf-recorder
+    - [ ] wf-recorder
     - [ ] clipse
     - [ ] udiskie
     - [ ] scrcpy/Escrcpy
