@@ -1,0 +1,149 @@
+[general]
+live_config_reload = true
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+dimensions = { columns = 90, lines = 25 }
+position   = { x = 25, y = 40 }
+padding    = { x = 12, y = 12 }
+
+dynamic_padding   = true
+decorations       = "Full"
+opacity           = 0.8
+blur              = false
+startup_mode      = "Windowed"
+title             = "Alacritty"
+dynamic_title     = true
+resize_increments = true
+level             = "Normal"
+
+[scrolling]
+
+
+[font]
+normal = { family = "FiraCode Nerd Font" }
+size   = 12
+
+[colors.primary]
+background        = "#1a1b26"
+foreground        = "#c0caf5"
+dim_foreground    = "#a9b1d6"
+bright_foreground = "#c0caf5"
+
+[colors.cursor]
+text   = "#1a1b26"
+cursor = "#c0caf5"
+
+[colors.vi_mode_cursor]
+text   = "#1a1b26"
+cursor = "#bb9af7"
+
+[colors.search.matches]
+foreground = "#1a1b26"
+background = "#a9b1d6"
+
+[colors.search.focused_match]
+foreground = "#1a1b26"
+background = "#9ece6a"
+
+[colors.footer_bar]
+foreground = "#1a1b26"
+background = "#a9b1d6"
+
+[colors.hints.start]
+foreground = "#1a1b26"
+background = "#e0af68"
+
+[colors.hints.end]
+foreground = "#1a1b26"
+background = "#a9b1d6"
+
+[colors.selection]
+text       = "#c0caf5"
+background = "#283457"
+
+[colors.normal]
+black   = "#15161e"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[colors.bright]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    =  "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+
+[colors.dim]
+black   = "#15161e"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ff9e64"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#db4b4b"
+
+[bell]
+animation = "EaseOutCubic"
+duration  = 1
+command   = "notify-send"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard     = true
+
+[cursor]
+style = { shape = "Beam", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+blink_interval   = 750
+blink_timeout    = 0
+unfocused_hollow = true
+thickness        = 0.15
+
+[terminal]
+osc52 = "OnlyCopy"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+{ mouse = "Right", mods = "Control", action = "Paste" },
+]
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[keyboard]
+bindings = [
+{ key = "C", mods = "Control|Shift", action = "Copy" },
+{ key = "V", mods = "Control|Shift", action = "Paste" },
+{ key = "Q", mods = "Super", action = "Quit" },
+{ key = "F", mods = "Super", action = "ToggleFullscreen" },
+]
+
+[debug]
+render_timer       = false
+persistent_logging = false
+log_level          = "Warn"
+renderer           = "None"
+print_events       = false
+highlight_damage   = false
+prefer_egl         = false
