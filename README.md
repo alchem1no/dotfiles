@@ -60,7 +60,7 @@ Not ready yet.
     - [ ] unicode
 - [ ] Fix cursor theme not working in some applications
 - [ ] Fix Thunar freezes
-- [ ] Fix Log Out button in Waybar power menu not working properly
+- [ ] Fix menu items in Waybar power menu not working correctly
 - [ ] Add and/or configure:
     - [x] Zsh
     - [x] PowerShell
