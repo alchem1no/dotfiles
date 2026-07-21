@@ -64,6 +64,8 @@ Not ready yet.
 - [ ] Add and/or configure:
     - [x] Zsh
     - [x] PowerShell
+    - [ ] Starship theme for bare TTY
+    - [ ] Foot
     - [ ] Kitty
 
     - [ ] Hyprland
