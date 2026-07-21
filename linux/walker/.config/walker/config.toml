@@ -1,3 +1,5 @@
+app_launch_prefix = "uwsm app -- " # wraps launched apps with UWSM
+
 as_window = false               # launch walker as a regular window instead of layer shell application
 force_keyboard_focus = false    # forces keyboard forcus to stay in Walker
 close_when_open = true          # close walker when invoking while already opened

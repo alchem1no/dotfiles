@@ -1,4 +1,7 @@
+local u = "uwsm app -- "
+
 local apps       = require("config.apps")
+local wrap       = require("lib.uwsm_wrapper")
 local monitors   = require("lib.monitors")
 local notify     = require("lib.notify")
 
@@ -20,7 +23,7 @@ local binds = {
     },
     {
         mainMod .. " + SHIFT + Escape",
-        hl.dsp.exec_cmd("hyprshutdown")
+        hl.dsp.exec_cmd(wrap(apps.log_out))
     },
 
     -- Change temperature of hyprsunset
@@ -36,7 +39,7 @@ local binds = {
     -- System info
     {
         mainMod .. " + F1",
-        hl.dsp.exec_cmd(apps.system_info)
+        hl.dsp.exec_cmd(wrap(apps.system_info))
     },
 
     -- Hide and reload Waybar respectively
@@ -179,54 +182,54 @@ local binds = {
             mainMod .. " + T",
             "CTRL + ALT + T"
         },
-        hl.dsp.exec_cmd(apps.terminal)
+        hl.dsp.exec_cmd(wrap(apps.terminal))
     },
     {
         {
             mainMod .. " + CTRL + T",
             "CTRL + SHIFT + ALT + T"
         },
-        hl.dsp.exec_cmd(apps.terminal_secondary_shell)
+        hl.dsp.exec_cmd(wrap(apps.terminal_secondary_shell))
     },
     {
         mainMod .. " + SHIFT + T",
-        hl.dsp.exec_cmd(apps.terminal2)
+        hl.dsp.exec_cmd(wrap(apps.terminal2))
     },
     {
         mainMod .. " + CTRL + SHIFT + T",
-        hl.dsp.exec_cmd(apps.terminal2_secondary_shell)
+        hl.dsp.exec_cmd(wrap(apps.terminal2_secondary_shell))
     },
     {
         mainMod .. " + R",
-        hl.dsp.exec_cmd(apps.runner)
+        hl.dsp.exec_cmd(wrap(apps.runner))
     },
     {
         mainMod .. " + E",
-        hl.dsp.exec_cmd(apps.file_manager_gui)
+        hl.dsp.exec_cmd(wrap(apps.file_manager_gui))
     },
     {
         mainMod .. " + SHIFT + E",
-        hl.dsp.exec_cmd(apps.file_manager_cli)
+        hl.dsp.exec_cmd(wrap(apps.file_manager_cli))
     },
     {
         mainMod .. " + N",
-        hl.dsp.exec_cmd(apps.editor)
+        hl.dsp.exec_cmd(wrap(apps.editor))
     },
     {
         mainMod .. " + B",
-        hl.dsp.exec_cmd(apps.browser)
+        hl.dsp.exec_cmd(wrap(apps.browser))
     },
     {
         mainMod .. " + SHIFT + B",
-        hl.dsp.exec_cmd(apps.browser2)
+        hl.dsp.exec_cmd(wrap(apps.browser2))
     },
     {
         mainMod .. " + Tab",
-        hl.dsp.exec_cmd(apps.todo_list)
+        hl.dsp.exec_cmd(wrap(apps.todo_list))
     },
     {
         mainMod .. " + SHIFT + C",
-        hl.dsp.exec_cmd(apps.color_picker)
+        hl.dsp.exec_cmd(wrap(apps.color_picker))
     },
 
     -- Menu
@@ -242,42 +245,42 @@ local binds = {
             mainMod .. " + SHIFT + D",
             "ALT + SHIFT + SPACE"
         },
-        hl.dsp.exec_cmd(apps.launcher_apps)
+        hl.dsp.exec_cmd(wrap(apps.launcher_apps))
     },
     {
         {
             mainMod .. " + CTRL + SHIFT + D",
             "CTRL + ALT + SHIFT + SPACE"
         },
-        hl.dsp.exec_cmd(apps.launcher2)
+        hl.dsp.exec_cmd(wrap(apps.launcher2))
     },
 
     -- Print keybind is implemented via monitor count check at the bottom
     {
         "ALT + Print",
-        hl.dsp.exec_cmd(apps.screen_capture_tool_window)
+        hl.dsp.exec_cmd(wrap(apps.screen_capture_tool_window))
     },
     {
         "CTRL + ALT + Print",
-        hl.dsp.exec_cmd(apps.screen_capture_tool_window_clipboard_only)
+        hl.dsp.exec_cmd(wrap(apps.screen_capture_tool_window_clipboard_only))
     },
     {
         "SHIFT + Print",
-        hl.dsp.exec_cmd(apps.screen_capture_tool_region)
+        hl.dsp.exec_cmd(wrap(apps.screen_capture_tool_region))
     },
     {
         "CTRL + SHIFT + Print",
-        hl.dsp.exec_cmd(apps.screen_capture_tool_region_clipboard_only)
+        hl.dsp.exec_cmd(wrap(apps.screen_capture_tool_region_clipboard_only))
     },
 
     -- Screen recording
     {
         mainMod .. " + F9",
-        hl.dsp.exec_cmd(apps.screen_recorder_whole_screen)
+        hl.dsp.exec_cmd(wrap(apps.screen_recorder_whole_screen))
     },
     {
         mainMod .. " + SHIFT + F9",
-        hl.dsp.exec_cmd(apps.screen_recorder_region)
+        hl.dsp.exec_cmd(wrap(apps.screen_recorder_region))
     },
 
     -- Window management
@@ -297,7 +300,7 @@ local binds = {
     -- Clipboard
     {
         mainMod .. " + V",
-        hl.dsp.exec_cmd(apps.clipboard_panel)
+        hl.dsp.exec_cmd(wrap(apps.clipboard_panel))
     },
     {
         mainMod .. " + SHIFT + V",
@@ -311,7 +314,7 @@ local binds = {
     -- Emoji
     {
         mainMod .. " + period",
-        hl.dsp.exec_cmd(apps.emoji_panel)
+        hl.dsp.exec_cmd(wrap(apps.emoji_panel))
     },
     {
         mainMod .. " + SHIFT + period",
@@ -321,7 +324,7 @@ local binds = {
     -- Cool visuals
     {
         mainMod .. " + CTRL + SHIFT + M",
-        hl.dsp.exec_cmd(apps.matrix)
+        hl.dsp.exec_cmd(wrap(apps.matrix))
     },
 
     -- Move focus

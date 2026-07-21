@@ -1,5 +1,7 @@
 local M = {}
 
+M.log_out = "hyprshutdown -t 'Logging out...' --post-cmd 'uwsm stop'"
+
 M.system_info           = "hyprsysteminfo"
 M.idle_daemon           = "hypridle"
 M.notification_manager  = "dunst"
