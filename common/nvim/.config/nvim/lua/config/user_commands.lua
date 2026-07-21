@@ -127,3 +127,8 @@ local platform = os_configs[myos.current_os]
 if platform then
     register_configs(platform)
 end
+
+vim.api.nvim_create_user_command("CheckDarkMode", function()
+    local is_dark = require("utils.is_dark_mode").is_dark_mode()
+    vim.notify("Dark Mode: " .. tostring(is_dark), vim.log.levels.INFO)
+end, {})
