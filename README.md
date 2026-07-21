@@ -11,21 +11,25 @@ Universal:
 Linux:
 - Hyprland and other hypr ecosystem programs
 - Waybar
+- dunst (borrowed from folke)
 - Kitty
 - Zsh
 - Walker + Elephant
 - Fuzzel
-- GIMP + PhotoGIMP
 - My bash scripts
+- GIMP + PhotoGIMP
+- DeaDBeeF
 ...
+
+Linux (configs in system directories):
+- greetd + ReGreet
 
 Windows:
 - Komorebi
-- YASB
 - whkdrc
+- YASB
 - Windows Terminal
-...
-
+- Cursor
 
 ## Notes on installation
 
@@ -40,27 +44,37 @@ Example: `cd ~/.dotfiles/linux && stow -t ~ hypr`.
 
 ### Windows:
 
-It's advised to create symlinks in `%LOCALAPPDATA%` directory to save space on disk. You can use `create-symlink.ps1` file for that, just launch it from terminal by typing `.\cread-symlink.ps1` in PowerShell terminal.
+It's advised to create symlinks in `%LOCALAPPDATA%` directory to save space on disk.
+~~You can use `create-symlink.ps1` file for that, just launch it from terminal by typing `.\cread-symlink.ps1` in PowerShell terminal.~~
+Not ready yet.
 
 ## To-Do
 
 - [x] Fix Neovide's config.toml not working
+- [x] Configure Hyprcursor
+- [ ] Fix cursor theme not working in some applications
 - [ ] Add and/or configure:
     - [x] Zsh
     - [x] PowerShell
     - [ ] Kitty
 
-    - [ ] HyprLand
+    - [ ] Hyprland
+    - [ ] Hyprland plugins
     - [x] Waybar
     - [x] Walker
     - [x] Elephant
     - [ ] HyprTile
     - [ ] HyprLS
     - [x] ReGreet
-    - [ ] Plugins
+
+    - [ ] Neovim
+        - [ ] Read docs
+        - [ ] Configure plugins
+        - [ ] Deal with keymaps
 
     - [x] DeadBeeF
     - [x] OpenTabletDriver
+    - wf-recorder
     - [ ] clipse
     - [ ] udiskie
     - [ ] scrcpy/Escrcpy
