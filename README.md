@@ -53,6 +53,7 @@ Not ready yet.
 - [ ] Make Hyprland animations slower
 - [x] Fix Neovide's config.toml not working
 - [x] Configure Hyprcursor
+- [ ] Add mute notification button to Waybar
 - [ ] Fix Elephant clipboard provider
 - [ ] Make Elephant providers paste text through ydotool:
     - [ ] clipboard
