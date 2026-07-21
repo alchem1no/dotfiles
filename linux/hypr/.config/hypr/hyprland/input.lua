@@ -18,7 +18,6 @@ hl.config({
         follow_mouse_threshold = 0.0,
 
         sensitivity = -0.8, -- -1.0 - 1.0, 0 means no modification.
-        natural_scroll = false,
         accel_profile = "adaptive",
         force_no_accel = false,
         rotation = 0,
