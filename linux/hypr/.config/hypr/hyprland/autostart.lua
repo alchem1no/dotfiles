@@ -36,6 +36,7 @@ hl.on("hyprland.start", function ()
     exec("elephant service enable")
     exec("systemctl --user start elephant.service")
     exec("walker --gapplication-service")
+    exec("foot --server")
 
     -- Systemd services
     exec("systemctl --user start opentabletdriver.service")
