@@ -7,10 +7,8 @@ M.blue_light_filter     = "hyprsunset"
 M.wallpaper_manager     = "hyprpaper"
 M.bar                   = "waybar"
 
-M.terminal  = "kitty"
-M.terminal2 = "footclient"
-
-M.terminal2_server = "foot --server"
+M.terminal  = "footclient"
+M.terminal2 = "kitty"
 
 M.terminal_secondary_shell  = M.terminal  .. " -e pwsh -NoLogo"
 M.terminal2_secondary_shell = M.terminal2 .. " -e pwsh -NoLogo"
