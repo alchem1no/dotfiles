@@ -25,22 +25,25 @@ function M.is_dark_mode()
           return mode == "1"
 
     elseif myos.is_windows then
-        local handle = io.popen(
-            'powershell -NoProfile '
-            .. '"(Get-ItemProperty '
-            .. '-Path HKCU:\\SOFTWARE\\Microsoft\\Windows\\'
-            .. 'CurrentVersion\\Themes\\Personalize'
-            .. ').AppsUseLightTheme"'
-        )
+        local obj = vim.system({
+            "reg", "query",
+            "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+            "/v", "AppsUseLightTheme"
+        }):wait()
 
-        if not handle then
-            return true
+        -- key/value missing entirely (e.g. never toggled) -> assume light
+        if obj.code ~= 0 then
+            return false
         end
 
-        local result = handle:read("*a")
-        handle:close()
+        -- obj.stdout looks like:
+        --     AppsUseLightTheme   REG_DWORD   0x0
+        local hex = obj.stdout:match("0x(%x+)")
+        if not hex then
+            return false
+        end
 
-        return tonumber(result) == 0
+        return tonumber(hex, 16) == 0
     end
 end
 
