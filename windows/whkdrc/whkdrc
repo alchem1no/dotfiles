@@ -8,7 +8,7 @@ ctrl + alt + o          : yasbc reload
 # ctrl + alt + shift + o  : taskkill /f /im kanata.exe; kanata_gui_winIOv2_x64.exe -c caps-lock-to-LCtrl-Esc.kbd
 
 alt + i                 : komorebic toggle-shortcuts
-ctrl + alt + f2         : yasbc toggle-bar
+alt + shift + f2        : yasbc toggle-bar
 
 # App shortcuts - these require shell to be pwsh / powershell
 # The apps will be focused if open, or launched if not open
