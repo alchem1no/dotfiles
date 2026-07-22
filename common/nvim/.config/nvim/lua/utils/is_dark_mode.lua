@@ -30,7 +30,7 @@ function M.is_dark_mode()
             .. '"(Get-ItemProperty '
             .. '-Path HKCU:\\SOFTWARE\\Microsoft\\Windows\\'
             .. 'CurrentVersion\\Themes\\Personalize'
-            .. ').AppsUseLightTheme'
+            .. ').AppsUseLightTheme"'
         )
 
         if not handle then
