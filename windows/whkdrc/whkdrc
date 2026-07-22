@@ -4,7 +4,7 @@
 # alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
 alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
 alt + shift + o         : komorebic reload-configuration
-ctl + alt + o           : yasbc reload
+ctrl + alt + o          : yasbc reload
 # ctrl + alt + shift + o  : taskkill /f /im kanata.exe; kanata_gui_winIOv2_x64.exe -c caps-lock-to-LCtrl-Esc.kbd
 
 alt + i                 : komorebic toggle-shortcuts
