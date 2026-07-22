@@ -54,8 +54,8 @@ M.screen_recorder_region       = "wf-recorder-region-toggle"
 
 M.clear_clipboard_history = "cliphist wipe; rm -f ~/.cache/cliphist/db; notify-send -i /usr/share/icons/Papirus/16x16/actions/edit-clear-history.svg 'Clipboard' 'History cleared'"
 
-M.wifi_menu_tui = "networkmanager_dmenu"
-M.bt_menu_tui   = "fuzzel-bluetooth"
+M.wifi_menu = "networkmanager_dmenu"
+M.bt_menu   = "fuzzel-bluetooth"
 
 M.network_manager = "NetworkManager"
 

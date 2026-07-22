@@ -79,14 +79,13 @@ local binds = {
             "GTK icon cache"
         )
     },
-
     {
-        mainMod .. " + F4",
-        hl.dsp.exec_cmd(apps.wifi_menu_tui)
+        mainMod .. " + F3",
+        hl.dsp.exec_cmd(apps.wifi_menu)
     },
     {
-        mainMod .. " + SHIFT + F4",
-        hl.dsp.exec_cmd(apps.bt_menu_tui)
+        mainMod .. " + F4",
+        hl.dsp.exec_cmd(apps.bt_menu)
     },
     {
         mainMod .. " + CTRL + F4",
