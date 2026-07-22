@@ -23,8 +23,8 @@ alt + q                 : komorebic close
 
 # Launch programs
 alt + t                 : wt        # Terminal
-alt + b                 : chrome    # Browser 1st
-alt + shift + b         : brave     # Browser 2nd
+alt + b                 : brave     # Browser 1st
+alt + shift + b         : firefox   # Browser 2nd
 alt + n                 : neovide   # Editor
 alt + m                 : telegram  # Messenger
 
