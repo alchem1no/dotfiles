@@ -1,5 +1,0 @@
-#!/bin/bash
-# This script allows greetd to free VT
-export LIBVA_DRIVER_NAME=i965   # VA-API for old Intel
-sleep 0.3
-exec /usr/bin/start-hyprland >/dev/null 2>&1
