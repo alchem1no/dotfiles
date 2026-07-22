@@ -110,6 +110,47 @@ widgets:
       border_color: System
       alignment: left
       offset_left: -12
+  quick_launch:
+    type: yasb.quick_launch.QuickLaunchWidget
+    options:
+      label: ""
+      search_placeholder: Search applications...
+      max_results: 30
+      show_icons: true
+      icon_size: 16
+      compact_text: true
+      providers:
+        apps:
+          enabled: true
+          prefix: '*'
+          priority: 0
+          show_recent: true
+          max_recent: 5
+          show_description: true
+      popup:
+        width: 720
+        height: 480
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        dark_mode: true
+      callbacks:
+        on_left: toggle_quick_launch
+      keybindings:
+      - keys: alt+d
+        action: toggle_quick_launch
+        screen: primary
+  komorebi_workspaces:
+    type: komorebi.workspaces.WorkspaceWidget
+    options:
+      label_workspace_btn: '{name}'
+      label_workspace_active_btn: '{name}'
+      label_workspace_populated_btn: '{name}'
+      label_default_name: '{index}'
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
   clock:
     type: yasb.clock.ClockWidget
     options:
@@ -207,16 +248,6 @@ widgets:
         cancel:
         - ''
         - Cancel
-  komorebi_workspaces:
-    type: komorebi.workspaces.WorkspaceWidget
-    options:
-      label_workspace_btn: '{name}'
-      label_workspace_active_btn: '{name}'
-      label_workspace_populated_btn: '{name}'
-      label_default_name: '{index}'
-      label_zero_index: false
-      hide_empty_workspaces: false
-      hide_if_offline: true
   cpu:
     type: yasb.cpu.CpuWidget
     options:
@@ -251,37 +282,6 @@ widgets:
         show_graph_grid: true
         graph_history_size: 60
         alignment: center
-  quick_launch:
-    type: yasb.quick_launch.QuickLaunchWidget
-    options:
-      label: ""
-      search_placeholder: Search applications...
-      max_results: 30
-      show_icons: true
-      icon_size: 16
-      compact_text: true
-      providers:
-        apps:
-          enabled: true
-          prefix: '*'
-          priority: 0
-          show_recent: true
-          max_recent: 5
-          show_description: true
-      popup:
-        width: 720
-        height: 480
-        blur: true
-        round_corners: true
-        round_corners_type: normal
-        border_color: system
-        dark_mode: true
-      callbacks:
-        on_left: toggle_quick_launch
-      keybindings:
-      - keys: alt+space
-        action: toggle_quick_launch
-        screen: primary
   active_window:
     type: yasb.active_window.ActiveWindowWidget
     options:
