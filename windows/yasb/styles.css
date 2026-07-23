@@ -494,8 +494,8 @@
     border-color: var(--tn-fg);
 }
 .komorebi-workspaces .ws-btn.active {
-    color:        var(--tn-green1);
-    border-color: var(--tn-green1);
+    color:        var(--tn-teal);
+    border-color: var(--tn-teal);
 }
 
 .komorebi-workspaces .ws-btn:hover,
