@@ -179,14 +179,14 @@ local binds = {
     {
         {
             mainMod .. " + T",
-            "CTRL + ALT + T"
+            "CTRL + ALT + T",
         },
         hl.dsp.exec_cmd(wrap(apps.terminal))
     },
     {
         {
             mainMod .. " + CTRL + T",
-            "CTRL + SHIFT + ALT + T"
+            "CTRL + SHIFT + ALT + T",
         },
         hl.dsp.exec_cmd(wrap(apps.terminal_secondary_shell))
     },
@@ -235,21 +235,21 @@ local binds = {
     {
         {
             mainMod .. " + D",
-            "ALT + SPACE"
+            "ALT + SPACE",
         },
         hl.dsp.exec_cmd(apps.launcher_open)
     },
     {
         {
             mainMod .. " + SHIFT + D",
-            "ALT + SHIFT + SPACE"
+            "ALT + SHIFT + SPACE",
         },
         hl.dsp.exec_cmd(wrap(apps.launcher_apps))
     },
     {
         {
             mainMod .. " + CTRL + SHIFT + D",
-            "CTRL + ALT + SHIFT + SPACE"
+            "CTRL + ALT + SHIFT + SPACE",
         },
         hl.dsp.exec_cmd(wrap(apps.launcher2))
     },
@@ -360,28 +360,28 @@ local binds = {
     {
         {
             mainMod .. " + SHIFT + left",
-            mainMod .. " + SHIFT + H"
+            mainMod .. " + SHIFT + H",
         },
         hl.dsp.window.swap({ direction = "l" })
     },
     {
         {
             mainMod .. " + SHIFT + right",
-            mainMod .. " + SHIFT + L"
+            mainMod .. " + SHIFT + L",
         },
         hl.dsp.window.swap({ direction = "r" })
     },
     {
         {
             mainMod .. " + SHIFT + up",
-            mainMod .. " + SHIFT + K"
+            mainMod .. " + SHIFT + K",
         },
         hl.dsp.window.swap({ direction = "u" })
     },
     {
         {
             mainMod .. " + SHIFT + down",
-            mainMod .. " + SHIFT + J"
+            mainMod .. " + SHIFT + J",
         },
         hl.dsp.window.swap({ direction = "d" })
     },
