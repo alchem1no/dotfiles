@@ -95,7 +95,17 @@ local binds = {
 
     -- Toggle fullscreen mode
     {
-        mainMod .. " + F11",
+        {
+            mainMod .. " + F11",
+            mainMod .. " + SHIFT + F",
+        },
+        hl.dsp.window.fullscreen({
+            mode = "maximized",
+            action = "toggle"
+        })
+    },
+    {
+        mainMod .. " + SHIFT + F11",
         function()
             -- Toggle fullscreen
             hl.dispatch(
@@ -110,13 +120,6 @@ local binds = {
                 hl.dsp.exec_cmd(apps.bar_toggle_visibility_command)
             )
         end
-    },
-    {
-        mainMod .. " + SHIFT + F11",
-        hl.dsp.window.fullscreen({
-            mode = "maximized",
-            action = "toggle"
-        })
     },
 
     -- Turn off screen
