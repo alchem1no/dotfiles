@@ -173,16 +173,16 @@ button:hover {
 
 #cpu {
   padding-left: 6px;
-  color:        @green;
-  border-color: @green;
+  color:        @purple;
+  border-color: @purple;
   margin-left:  3px;
 }
 
 #memory {
   padding-left:  6px;
   padding-right: 12px;
-  color:        @magenta;
-  border-color: @magenta;
+  color:         @green;
+  border-color:  @green;
 }
 
 #disk {
