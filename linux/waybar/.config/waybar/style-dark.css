@@ -169,8 +169,8 @@ button:hover {
 
   font-size: 16px;
 
-  color:        @blue;
-  border-color: @blue;
+  color:        @cyan;
+  border-color: @cyan;
 }
 
 #workspaces button {
