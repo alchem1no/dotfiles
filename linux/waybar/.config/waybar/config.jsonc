@@ -64,11 +64,7 @@
                 "default": " "
             },
             "persistent-workspaces": {
-                "1":  [],
-                "2":  [],
-                "3":  [],
-                "4":  [],
-                "5":  []
+                "*": 5
             },
             // PR #3017
             // "tooltip": true,
