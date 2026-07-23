@@ -34,6 +34,21 @@
   border-radius: 10px;
 }
 
+/* Waybar transparent BG */
+window#waybar {
+  background-color: transparent;
+
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+window#waybar.hidden {
+  opacity: 0.2;
+}
+window#waybar.empty #window {
+  background: transparent;
+  border:     none;
+}
+
 /* General settings for all modules */
 #backlight,
 #battery,
@@ -95,19 +110,34 @@
   background: @bg_highlight;
 }
 
-/* Waybar transparent BG */
-window#waybar {
-  background-color: transparent;
+/* Margins */
 
-  transition-property: background-color;
-  transition-duration: .5s;
+/* Left */
+#cpu,
+#custom-numlock,
+#backlight,
+#network,
+#custom-power
+{
+  margin-left: 3px;
 }
-window#waybar.hidden {
-  opacity: 0.2;
+
+/* Right */
+#custom-launcher,
+#idle_inhibitor,
+#language,
+#wireplumber,
+#battery
+{
+  margin-right: 3px;
 }
-window#waybar.empty #window {
-  background: transparent;
-  border:     none;
+
+/* Both */
+#workspaces,
+#clock,
+#tray
+{
+  margin: 0 3px;
 }
 
 /* Hyprland submap settings */
@@ -136,7 +166,6 @@ button:hover {
 #custom-launcher {
   padding-left:  7px;
   padding-right: 11px;
-  margin-right:  3px;
 
   font-size: 16px;
 
@@ -144,9 +173,6 @@ button:hover {
   border-color: @blue;
 }
 
-#workspaces {
-  margin: 0 3px 0;
-}
 #workspaces button {
   padding-left:  6px;
   padding-right: 3px;
@@ -177,7 +203,6 @@ button:hover {
   padding-left: 6px;
   color:        @purple;
   border-color: @purple;
-  margin-left:  3px;
 }
 
 #memory {
@@ -197,7 +222,6 @@ button:hover {
   padding-left: 6px;
   color:        @orange;
   border-color: @orange;
-  margin-right: 3px;
 }
 #temperature.critical {
   color:        @red;
@@ -211,46 +235,33 @@ button:hover {
   border-color: @cyan;
 
   padding: 4px 4px;
-  margin:  0 4px 0;
 }
 
 /* RIGHT */
 
 #idle_inhibitor {
   padding: 0 6px 0 7px;
-  margin: 0 3px 0;
 }
 #idle_inhibitor.activated {
   color:        @green;
   border-color: @green;
 }
 
-/*
-#keyboard-state > label.numlock {
-  color: @comment;
-  border: 2px solid @comment;
-  padding: 0 6px 0;
-}
-#keyboard-state > label.numlock.locked {
-  color: @orange;
-  border: 2px solid @orange;
-  padding: 0 6px 0;
-}
-#keyboard-state > label.capslock {
-  color: @comment;
-  border: 2px solid @comment;
-  padding: 0 6px 0;
-}
-#keyboard-state > label.capslock.locked {
-  color: @blue;
+#tray {
+  background-color: @bg;
+  color:            @blue;
   border: 2px solid @blue;
-  padding: 0 6px 0;
 }
-*/
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @orange;
+}
 
 #custom-numlock {
   padding: 0 4px 0;
-  margin-left: 3px;
 }
 #custom-numlock.locked {
   color:        @orange;
@@ -261,21 +272,6 @@ button:hover {
   color:        @purple;
   border-color: @purple;
   padding:      0 6px 0;
-  margin-right: 3px;
-}
-
-#tray {
-  background-color: @bg;
-  color:            @blue;
-  border: 2px solid @blue;
-  margin: 0 3px 0;
-}
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @orange;
 }
 
 #backlight {
@@ -283,7 +279,6 @@ button:hover {
   border-color:  @fg_dark;
   padding-left:  6px;
   padding-right: 8px;
-  margin-left:   3px;
 }
 
 /* Audio */
@@ -343,7 +338,6 @@ button:hover {
   color:        @blue;
   border-color: @blue;
   padding: 0 12px 0 8px;
-  margin-right: 3px;
 }
 #battery.charging,
 #battery.plugged {
@@ -373,7 +367,6 @@ button:hover {
   font-size:     14px;
   padding-left:  8px;
   padding-right: 11px;
-  margin-left:   3px;
   margin-right:  0px;
 
   color:        @red;
@@ -406,8 +399,7 @@ menu separator {
 /* LEFT */
 
 window#waybar.bottom-bar #window {
-  margin-right: 4px;
-  min-width:    20px;
+  min-width: 20px;
 }
 #window {
   border-color: @magenta;
@@ -419,7 +411,6 @@ window#waybar.bottom-bar #window {
 /* RIGHT */
 
 window#waybar.bottom-bar #mpris {
-  margin-left: 4px;
 }
 #mpris {
   color:        @fg;

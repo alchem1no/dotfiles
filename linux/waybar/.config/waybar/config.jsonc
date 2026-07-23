@@ -22,12 +22,9 @@
         ],
         "modules-right": [
             "idle_inhibitor",
-
-            // "keyboard-state",
+            "tray",
             "custom/numlock",
             "hyprland/language",
-
-            "tray",
             "backlight",
             "wireplumber",
             "network",
@@ -153,13 +150,10 @@
             "tooltip-format-deactivated": "Stay awake: Off"
         },
 
-        // "keyboard-state": {
-        //     "numlock": true,
-        //     "capslock": false,
-        //     "format": "{name}",
-
-        //     "device": "/dev/input/event4"
-        // },
+        "tray": {
+            "icon-size": 18,
+            "spacing": 6
+        },
 
         "custom/numlock": {
             "exec": "cat /sys/class/leds/input*::numlock/brightness 2>/dev/null | head -1 | awk '{print ($1==1) ? \"{\\\"text\\\":\\\"Num\\\",\\\"class\\\":\\\"locked\\\",\\\"tooltip\\\":\\\"Num Lock: ON\\\"}\" : \"{\\\"text\\\":\\\"Num\\\",\\\"class\\\":\\\"\\\",\\\"tooltip\\\":\\\"Num Lock: OFF\\\"}\"}'",
@@ -183,11 +177,6 @@
             // Kanata input
             "keyboard-name": "kanata",
             "on-click": "hyprctl switchxkblayout kanata next"
-        },
-
-        "tray": {
-            "icon-size": 18,
-            "spacing": 6
         },
 
         "backlight": {
