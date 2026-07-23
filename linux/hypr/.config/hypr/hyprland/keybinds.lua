@@ -178,7 +178,7 @@ local binds = {
         {
             mainMod .. " + T",
             "CTRL + ALT + T",
-            mainMod .. " + Enter",
+            mainMod .. " + Return",
         },
         hl.dsp.exec_cmd(wrap(apps.terminal))
     },
@@ -186,7 +186,7 @@ local binds = {
         {
             mainMod .. " + SHIFT + T",
             "CTRL + SHIFT + ALT + T",
-            mainMod .. " + SHIFT + Enter",
+            mainMod .. " + SHIFT + Return",
         },
         hl.dsp.exec_cmd(wrap(apps.terminal_secondary_shell))
     },
