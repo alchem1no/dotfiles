@@ -69,7 +69,9 @@
 
     --tn-comment:        #565f89;
 
-    --icons-font: "Segoe Fluent Icons";
+    /* --icons-font: "Segoe Fluent Icons"; */
+    --icons-font: "FiraCode Nerd Font", "FiraCode Nerd Font propo";
+    --icons-font-native: "Segoe Fluent Icons";
     --icons-font-fallback: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
     --system-font: "FiraCode Nerd Font", "FiraCode Nerd Font Propo";
 }
@@ -176,14 +178,6 @@
     outline: none;
 }
 
-/* Universal styles */
-.home-widget,
-.quick-launch-widget,
-.power-menu-widget {
-    padding-left:  6px;
-    padding-right: 0px;
-}
-
 /* Base Widget Styles */
 .widget {
     background-color: var(--tn-bg);
@@ -211,16 +205,47 @@
     background-color: var(--tn-bg-highlight);
 }
 
+/* Universal styles */
+.systray,
+.cpu-widget,
+
+.language-widget,
+.brightness-widget,
+.volume-widget,
+.wifi-widget,
+.settings-widget
+{
+    margin-left: 6px;
+}
+.systray,
+.quick-launch-widget,
+
+.language-widget,
+.brightness-widget,
+.microphone-widget,
+.battery-widget,
+.github-widget
+{
+    margin-right: 6px;
+}
+
 /* TOP BAR */
 
 /* LEFT */
 
 /* Home Menu */
-.home-widget {
+.home-widget,
+.home-widget .icon,
+.home-widget .label
+{
+    color: var(--tn-cyan);
     border-color: var(--tn-cyan);
 }
-.home-widget .label {
-    color: var(--tn-cyan);
+.home-widget {
+    margin-right: 4px;
+}
+.home-widget .icon {
+    padding-right: 2px;
 }
 .home-menu {
     background-color: var(--yasb-popup-bg);
@@ -241,11 +266,18 @@
 }
 
 /* Quick Launch */
-.quick-launch-widget {
+.quick-launch-widget,
+.quick-launch-widget .icon,
+.quick-launch-widget .label
+{
+    color:        var(--tn-purple);
     border-color: var(--tn-purple);
 }
-.quick-launch-widget .label {
-    color: var(--tn-purple);
+.quick-launch-widget {
+    margin-left: 4px;
+}
+.quick-launch-widget .icon {
+    padding-right: 3px;
 }
 .quick-launch-popup .container {
     background-color: var(--yasb-popup-bg);
@@ -445,11 +477,11 @@
     font-weight: 600;
 }
 .komorebi-workspaces .ws-btn.populated {
-    color: var(--tn-fg);
+    color:        var(--tn-fg);
     border-color: var(--tn-fg);
 }
 .komorebi-workspaces .ws-btn.active {
-    color: var(--tn-green1);
+    color:        var(--tn-green1);
     border-color: var(--tn-green1);
 }
 
@@ -461,14 +493,18 @@
 }
 
 /* CPU */
-.cpu-widget {
-    border-color: var(--tn-green);
-}
+.cpu-widget,
 .cpu-widget .icon,
 .cpu-widget .label
 {
+    color:        var(--tn-purple);
+    border-color: var(--tn-purple);
+}
+.cpu-widget .icon {
+    padding-right: 5px;
+}
+.cpu-widget .label {
     padding-right: 4px;
-    color: var(--tn-green);
 }
 .cpu-popup {
     background-color: var(--yasb-popup-bg);
@@ -539,16 +575,35 @@
     padding: 0 4px 12px 4px;
 }
 
+/* GPU */
+.gpu-widget,
+.gpu-widget .icon,
+.gpu-widget .label
+{
+    color:        var(--tn-blue1);
+    border-color: var(--tn-blue1);
+}
+.gpu-widget .icon {
+    font-size: 16px;
+    padding-right: 4px;
+}
+.gpu-widget .label {
+    padding-right: 8px;
+}
+
 /* Memory */
-.memory-widget {
-    border-color: var(--tn-magenta);
+.memory-widget,
+.memory-widget .icon,
+.memory-widget .label
+{
+    color:        var(--tn-green);
+    border-color: var(--tn-green);
 }
 .memory-widget .icon {
-    padding-right: 4px;
-    color: var(--tn-magenta);
+    padding-right: 5px;
 }
 .memory-widget .label {
-    color: var(--tn-magenta);
+    padding-right: 6px;
 }
 .memory-popup {
     background-color: var(--yasb-popup-bg);
@@ -617,6 +672,22 @@
     color: var(--yasb-fg);
     font-family: var(--system-font);
     padding: 0 4px 12px 4px;
+}
+
+/* Disk */
+.disk-widget,
+.disk-widget .icon,
+.disk-widget .label
+{
+    color:        var(--tn-blue);
+    border-color: var(--tn-blue);
+}
+.disk-widget .icon {
+    padding-left:  2px;
+    padding-right: 4px;
+}
+.disk-widget .label {
+    padding-right: 6px;
 }
 
 /* CENTER */
@@ -814,66 +885,9 @@
 
 /* RIGHT */
 
-/* System Tray */
-.systray {
-    padding-right: 2px;
-    border-color: var(--tn-blue);
-}
-.systray .button {
-    border-radius: 4px;
-    padding: 2px;
-    background: transparent;
-    border: none;
-    outline: none;
-}
-.systray .button.drag-over {
-    background: var(--yasb-white-alpha-40);
-}
-.systray .pinned-container.drop-target {
-    background: var(--yasb-white-alpha-10);
-}
-.systray .unpinned-visibility-btn {
-    border-radius: 4px;
-    height: 20px;
-    width: 16px;
-    border: none;
-    outline: none;
-    padding-right: 0;
-    font-family: var(--icons-font);
-}
-.systray .unpinned-visibility-btn:checked {
-    background: transparent;
-}
-.systray-popup .button.drag-over {
-    background-color: var(--yasb-white-alpha-20);
-}
-.systray .pinned-container.pinned-container.drop-target {
-    background-color: var(--yasb-white-alpha-10);
-}
-.systray-popup {
-    background-color: var(--yasb-popup-bg);
-    padding: 4px;
-}
-.systray-popup .button {
-    padding: 10px;
-    margin: 0;
-    border: 0;
-    border-radius: 6px;
-}
-
-/* Language*/
-.language-widget {
-    border-color: var(--tn-orange);
-}
-.language-widget .icon,
-.language-widget .label
-{
-    color: var(--tn-orange);
-}
-
 /* GitHub */
 .github-widget .icon {
-    font-family: var(--icons-font-fallback);
+    padding-right: 2px;
 }
 .github-menu {
     background-color: var(--yasb-popup-bg);
@@ -997,43 +1011,80 @@
     color: #f38ba8;
 }
 
-/* Microphone */
-.microphone-widget {
-    border-color: var(--tn-yellow);
+/* System Tray */
+.systray {
+    padding-right: 5px;
+    border-color: var(--tn-blue);
 }
-.microphone-widget .icon {
-    font-size: 14px;
-    color: var(--tn-yellow);
-}
-.microphone-widget .icon.no-device {
-    color: #a3a3a3;
-    font-size: 14px;
-}
-.microphone-menu {
-    background-color: var(--yasb-popup-bg);
-    min-width: 300px;
-}
-.microphone-menu .system-volume-container .volume-slider {
-    border: none;
-}
-.microphone-menu .microphone-container .device {
-    background-color: transparent;
-    border: none;
-    padding: 6px 8px 6px 4px;
-    margin: 2px 0;
-    font-size: 12px;
+.systray .button {
     border-radius: 4px;
+    padding: 2px;
+    background: transparent;
+    border: none;
+    outline: none;
 }
-.microphone-menu .microphone-container .device.selected {
-    background-color: var(--yasb-white-alpha-08);
+.systray .button.drag-over {
+    background: var(--yasb-white-alpha-40);
+}
+.systray .pinned-container.drop-target {
+    background: var(--yasb-white-alpha-10);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    border: none;
+    outline: none;
+    padding-right: 0;
+    font-family: var(--icons-font);
+}
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+.systray-popup .button.drag-over {
+    background-color: var(--yasb-white-alpha-20);
+}
+.systray .pinned-container.pinned-container.drop-target {
+    background-color: var(--yasb-white-alpha-10);
+}
+.systray-popup {
+    background-color: var(--yasb-popup-bg);
+    padding: 4px;
+}
+.systray-popup .button {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Language*/
+.language-widget {
+    border-color: var(--tn-orange);
+}
+.language-widget .label {
+    color: var(--tn-orange);
+}
+
+/* Brightness */
+.brightness-widget .icon {
+    padding-right: 4px;
+}
+.brightness-widget .label {
+    padding-right: 4px;
 }
 
 /* Volume */
-.volume-widget {
+.volume-widget,
+.volume-widget .icon,
+.volume-widget .label
+{
+    color:        var(--tn-yellow);
     border-color: var(--tn-yellow);
 }
 .volume-widget .icon {
-    color: var(--tn-yellow);
+    font: 16px var(--icons-font-native);
+}
+.volume-widget .label {
+    padding-right: 6px;
 }
 .audio-menu {
     background-color: var(--yasb-popup-bg);
@@ -1081,20 +1132,130 @@
     margin-right: 8px;
 }
 
+/* Microphone */
+.microphone-widget,
+.microphone-widget .icon,
+.microphone-widget .label
+{
+    color:        var(--tn-yellow);
+    border-color: var(--tn-yellow);
+}
+.microphone-widget .icon {
+    font-size: 16px;
+}
+.microphone-widget .label {
+    padding-right: 6px;
+}
+.microphone-widget .icon.no-device {
+    color: #a3a3a3;
+    font-size: 14px;
+}
+.microphone-menu {
+    background-color: var(--yasb-popup-bg);
+    min-width: 300px;
+}
+.microphone-menu .system-volume-container .volume-slider {
+    border: none;
+}
+.microphone-menu .microphone-container .device {
+    background-color: transparent;
+    border: none;
+    padding: 6px 8px 6px 4px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.microphone-menu .microphone-container .device.selected {
+    background-color: var(--yasb-white-alpha-08);
+}
+
+/* Wi-Fi */
+.wifi-widget,
+.wifi-widget .icon,
+.wifi-widget .label
+{
+    color:        var(--tn-cyan);
+    border-color: var(--tn-cyan);
+}
+.wifi-widget .label {
+    padding-left:  1px;
+    padding-right: 3px;
+}
+
 /* Bluetooth */
-.bluetooth-widget {
-    border-color: var(--tn-blue);
+.bluetooth-widget,
+.bluetooth-widget .icon,
+.bluetooth-widget .label
+{
+    color:        var(--tn-cyan);
+    border-color: var(--tn-cyan);
+}
+.bluetooth-widget .icon {
+    padding-left:  5px;
+    padding-right: 2px;
+
+    font-size: 18px;
 }
 .bluetooth-widget .label {
+    padding-left:  3px;
+    padding-right: 2px;
+}
+
+/* Battery */
+.battery-widget,
+.battery-widget .icon,
+.battery-widget .label
+{
+    color:        var(--tn-blue);
+    border-color: var(--tn-blue);
+}
+.battery-widget {
+    padding-left:  7px;
+    padding-right: 9px;
+}
+.battery-widget .icon {
+    padding-left: 8px;
+}
+.battery-widget .label.status-critical {
+    color: var(--tn-red);
+}
+.battery-widget .label.status-low {
+    color: var(--tn-orange);
+}
+.battery-widget .label.status-medium {
+    color: var(--tn-fg);
+}
+.battery-widget .label.status-high {
     color: var(--tn-blue);
+}
+.battery-widget .label.status-medium {
+    color: var(--tn-green);
+}
+
+/* Custom: Settings */
+.settings-widget,
+.settings-widget .icon,
+.settings-widget .label
+{
+    color:        var(--tn-blue);
+    border-color: var(--tn-blue);
+}
+.settings-widget {
+    padding-right: 7px;
+}
+.settings-widget .icon {
+    padding-right: 1px;
 }
 
 /* Notifications */
-.notification-widget {
-    border-color: var(--tn-green);
+.notification-widget,
+.notification-widget .icon
+{
+    color:        var(--tn-green1);
+    border-color: var(--tn-green1);
 }
 .notification-widget .icon {
-    color: var(--tn-green);
+    padding-right: 2px;
 }
 
 /* Power Menu */
@@ -1103,6 +1264,11 @@
     padding-right: 7px;
 
     border-color: var(--tn-red);
+}
+.power-menu-widget .icon {
+    padding-right: 2px;
+
+    color: var(--tn-red);
 }
 .power-menu-widget .label {
     color: var(--tn-red);

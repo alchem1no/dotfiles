@@ -62,6 +62,10 @@ Not ready yet.
 - [ ] Fix cursor theme not working in some applications
 - [ ] Fix Thunar freezes
 - [ ] Fix menu items in Waybar power menu not working correctly
+- YASB:
+    - [ ] Fix brightness icon appearing chopped
+    - [ ] Unify paddings
+    - [ ] Fix workspaces padding being too big
 - [ ] Add and/or configure:
     - [x] Zsh
     - [x] PowerShell

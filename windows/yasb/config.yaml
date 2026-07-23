@@ -40,16 +40,22 @@ bars:
       - quick_launch
       - komorebi_workspaces
       - cpu
+      - gpu
       - memory
+      - disk
       center:
       - clock
       right:
+      - github
       - systray
       - language
-      - github
-      - microphone
+      - brightness
       - volume
+      - microphone
+      - wifi
       - bluetooth
+      - battery
+      - settings
       - notifications
       - power_menu
   bottom-bar:
@@ -85,14 +91,15 @@ bars:
       right:
       - media
 widgets:
+
+  # TOP BAR
+
+  # Left
+
   home:
     type: yasb.home.HomeWidget
     options:
-      label: ""
-      callbacks:
-        on_left: toggle_menu
-        on_middle: 'run: ms-settings:about'
-        on_right: do_nothing
+      label: '<span></span>'
       menu_list:
       - title: User Home
         path: '~'
@@ -109,11 +116,28 @@ widgets:
       round_corners_type: normal
       border_color: System
       alignment: left
-      offset_left: -12
+      offset_top: 6
+      offset_left: 0
+      alignment: left
+      direction: down
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        hibernate: "Hibernate"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
+      callbacks:
+        on_left: toggle_menu
+        on_middle: 'exec cmd /c start ms-settings:about'
+        on_right: do_nothing
   quick_launch:
     type: yasb.quick_launch.QuickLaunchWidget
     options:
-      label: ""
+      label: '<span></span>'
       search_placeholder: Search applications...
       max_results: 30
       show_icons: true
@@ -149,12 +173,103 @@ widgets:
       label_workspace_populated_btn: '{name}'
       label_default_name: '{index}'
       label_zero_index: false
-      hide_empty_workspaces: false
+      hide_empty_workspaces: true
       hide_if_offline: true
+  cpu:
+    type: yasb.cpu.CpuWidget
+    options:
+      label: '{info[percent][total]}% <span></span>'
+      label_alt: '{info[freq][current]} MHz <span></span>'
+      update_interval: 2000
+      hide_decimal: true
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        alignment: center
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+  gpu:
+    type: yasb.gpu.GpuWidget
+    options:
+      label: "{info[utilization]}% <span>󰍹</span>"
+      label_alt: "{info[temp]}°C | {info[mem_used]} / {info[mem_total]} <span>󰍹</span>"
+      update_interval: 2000
+      gpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: toggle_menu
+        on_middle: 'exec cmd /c start ms-settings:display-advancedgraphics'
+        on_right: toggle_label
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+  memory:
+    type: yasb.memory.MemoryWidget
+    options:
+      label: '{virtual_mem_free} <span></span>'
+      label_alt: 'VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}% <span></span>'
+      update_interval: 5000
+      hide_decimal: true
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+      menu:
+        enabled: true
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+        alignment: center
+  disk:
+    type: yasb.disk.DiskWidget
+    options:
+        label: '{volume_label}: {space[used][percent]} <span> </span>'
+        label_alt: '{volume_label}: {space[used][gb]} / {space[total][gb]} <span></span>'
+        volume_label: 'C'
+        update_interval: 60
+        group_label:
+          volume_labels: ["C", "D", "E", "F"]
+          show_label_name: true
+          blur: True
+          round_corners: True
+          round_corners_type: "small"
+          border_color: "System"
+          alignment: "right"
+          direction: "down"
+        callbacks:
+          on_left: "toggle_group"
+          on_middle: "exec cmd /c start ms-settings:storagesense" # Open disk C in file explorer
+          on_right: "toggle_label"
+        disk_thresholds:
+            low: 25
+            medium: 50
+            high: 90
+
+  # Center
+
   clock:
     type: yasb.clock.ClockWidget
     options:
-      label: '{%H:%M}<span>{alarm}</span>'
+      label: '{%H:%M} <span>{alarm}</span>'
       label_alt: '{%a, %d %b %H:%M}'
       timezones: []
       calendar:
@@ -170,163 +285,19 @@ widgets:
         on_left: toggle_calendar
         on_middle: toggle_label
         on_right: context_menu
-  volume:
-    type: yasb.volume.VolumeWidget
-    options:
-      label: <span>{icon}</span>
-      label_alt: <span>{icon}</span>{level}
-      tooltip: true
-      volume_icons:
-      - "\uE74F"
-      - "\uE992"
-      - "\uE993"
-      - "\uE994"
-      - "\uE995"
-      callbacks:
-        on_left: toggle_volume_menu
-        on_right: toggle_mute
-      audio_menu:
-        blur: true
-        round_corners: true
-        round_corners_type: normal
-        border_color: system
-        alignment: right
-        direction: down
-        show_apps: true
-        show_app_labels: false
-        show_app_icons: true
-        show_apps_expanded: false
-        app_icons:
-          toggle_down: "\uE972"
-          toggle_up: "\uE971"
-  notifications:
-    type: yasb.notifications.NotificationsWidget
-    options:
-      label: "<span>\uF2A5</span>"
-      label_alt: '{count} notifications'
-      hide_empty: true
-      tooltip: false
-      callbacks:
-        on_left: toggle_notification
-        on_right: do_nothing
-        on_middle: do_nothing
-  power_menu:
-    type: yasb.power_menu.PowerMenuWidget
-    options:
-      # label: "<span>\uE712</span>"
-      label: "⏻"
-      uptime: true
-      show_user: true
-      menu_style: popup
-      popup:
-        blur: true
-        round_corners: true
-        round_corners_type: normal
-        border_color: System
-        alignment: right
-        offset_left: 12
-      profile_image_size: 64
-      buttons:
-        lock:
-        - "\uDB80\uDF41"
-        - Lock
-        signout:
-        - "\uDB80\uDF43"
-        - Sign out
-        sleep:
-        - "\uDB82\uDD04"
-        - Sleep
-        hibernate:
-        - "\uDB82\uDD01"
-        - Hibernate
-        restart:
-        - "\uDB81\uDC53"
-        - Restart
-        shutdown:
-        - "\uDB82\uDD06"
-        - Shut Down
-        cancel:
-        - ''
-        - Cancel
-  cpu:
-    type: yasb.cpu.CpuWidget
-    options:
-      label: "<span>\uEEA1</span> {info[percent][total]}%"
-      label_alt: '{info[freq][current]} MHz'
-      update_interval: 2000
-      hide_decimal: true
-      menu:
-        enabled: true
-        show_graph: true
-        show_graph_grid: true
-        graph_history_size: 60
-        alignment: center
-      callbacks:
-        on_left: toggle_menu
-        on_middle: do_nothing
-        on_right: toggle_label
-  memory:
-    type: yasb.memory.MemoryWidget
-    options:
-      label: "<span>\uE9D9</span> {virtual_mem_free}"
-      label_alt: "<span>\uEFC5</span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
-      update_interval: 5000
-      hide_decimal: true
-      callbacks:
-        on_left: toggle_menu
-        on_middle: do_nothing
-        on_right: toggle_label
-      menu:
-        enabled: true
-        show_graph: true
-        show_graph_grid: true
-        graph_history_size: 60
-        alignment: center
-  active_window:
-    type: yasb.active_window.ActiveWindowWidget
-    options:
-      label: '{win[title]}'
-      label_alt: '[class_name=''{win[class_name]}'' exe=''{win[process][name]}'' hwnd={win[hwnd]}]'
-      label_no_window: ''
-      label_icon: true
-      label_icon_size: 16
-      max_length: 32
-      max_length_ellipsis: '...'
-      monitor_exclusive: false
-  systray:
-    type: yasb.systray.SystrayWidget
-    options:
-      class_name: systray
-      label_collapsed: "\uE972"
-      label_expanded: "\uE971"
-      label_position: right
-      pin_click_modifier: ctrl
-      show_unpinned: false
-      show_battery: false
-      show_volume: false
-      icon_size: 16
-      use_hook: true
-      show_in_popup: true
-      icons_per_row: 5
-      popup:
-        blur: true
-        round_corners: true
-        round_corners_type: normal
-        border_color: None
-        alignment: center
-        direction: down
-        offset_top: 6
-        offset_left: 0
+
+  # Right
+
   github:
     type: yasb.github.GithubWidget
     options:
-      label: "<span>\uEBA1</span>"
-      label_alt: Notifications {data}
+      label: '<span>󰊤</span>'
+      label_alt: 'Notifications {data} <span>󰊤</span>'
       max_notification: 50
       notification_dot:
         enabled: true
         corner: top_right
-        color: '#ef4747'
+        color: '#f7768e'
         margin:
         - 0
         - 3
@@ -350,15 +321,108 @@ widgets:
         - CheckSuite
         - Release
         - Discussion
+  systray:
+    type: yasb.systray.SystrayWidget
+    options:
+      class_name: systray
+      label_collapsed: ''
+      label_expanded: ''
+      label_position: right
+      pin_click_modifier: ctrl
+      show_unpinned: false
+      show_battery: false
+      show_volume: false
+      icon_size: 16
+      use_hook: true
+      show_in_popup: true
+      icons_per_row: 5
+      popup:
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: None
+        alignment: center
+        direction: down
+        offset_top: 6
+        offset_left: 0
+  language:
+    type: 'yasb.language.LanguageWidget'
+    options:
+      label: '{lang[language_code]}'
+      update_interval: 1
+      callbacks:
+        on_left: toggle_menu
+        on_middle: do_nothing
+        on_right: toggle_label
+  brightness:
+    type: yasb.brightness.BrightnessWidget
+    options:
+      label: '{percent}% <span>{icon}</span>'
+      tooltip: true
+      hide_unsupported: true
+      brightness_toggle_level: [0, 50, 100]
+      auto_light: false
+      auto_light_icon: "\udb80\udce1"
+      auto_light_night_level: 35
+      auto_light_night_start_time: '19:00'
+      auto_light_night_end_time: '06:45'
+      auto_light_day_level: 75
+      brightness_icons:
+        - "\udb80\udcde"  # Icon for 0-25% brightness
+        - "\udb80\udcdd"  # Icon for 26-50% brightness
+        - "\udb80\udcdf"  # Icon for 51-75% brightness
+        - "\udb80\udce0"  # Icon for 76-100% brightness
+      brightness_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: System
+        alignment: right
+        direction: down
+        brightness_icon: "\ue706"
+        contrast_icon: "\ue7a1"
+      callbacks:
+        on_left: toggle_brightness_menu
+        on_middle: 'exec cmd /c start ms-settings:display'
+        on_right: toggle_label
+  volume:
+    type: yasb.volume.VolumeWidget
+    options:
+      label: '{level} <span>{icon}</span>'
+      mute_text: 'mute'
+      tooltip: true
+      volume_icons:
+      - "\uE74F"
+      - "\uE992"
+      - "\uE993"
+      - "\uE994"
+      - "\uE995"
+      callbacks:
+        on_left: toggle_volume_menu
+        on_middle: 'exec cmd /c start ms-settings:sound'
+        on_right: toggle_mute
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        direction: down
+        show_apps: true
+        show_app_labels: false
+        show_app_icons: true
+        show_apps_expanded: false
+        app_icons:
+          toggle_down: "\uE972"
+          toggle_up: "\uE971"
   microphone:
     type: yasb.microphone.MicrophoneWidget
     options:
-      label: <span>{icon}</span>
-      label_alt: <span>{icon}</span> {level}
-      mute_text: mute
+      label: '{level} <span>{icon}</span>'
+      mute_text: 'mute'
       icons:
-        normal: "\uEC71"
-        muted: "\uE720"
+        normal: 
+        muted:  
       mic_menu:
         blur: true
         round_corners: true
@@ -368,8 +432,174 @@ widgets:
         direction: down
       callbacks:
         on_left: toggle_mic_menu
-        on_middle: toggle_label
+        on_middle: 'exec cmd /c start ms-settings:privacy-microphone'
         on_right: toggle_mute
+  wifi:
+    type: yasb.wifi.WifiWidget
+    options:
+      label: '{wifi_icon}'
+      label_alt: '{wifi_name} {wifi_strength}% {wifi_icon}'
+      update_interval: 5000
+      callbacks:
+        on_left: toggle_menu
+        on_middle: 'exec cmd /c start ms-settings:network'
+        on_right: toggle_label
+      ethernet_label: '{wifi_icon}'
+      ethernet_label_alt: '{ip_addr} {wifi_icon}'
+      ethernet_icon: '<span>󰈀</span>'
+      get_exact_wifi_strength: true
+      wifi_icons:
+        - 󰤯
+        - 󰤟
+        - 󰤢
+        - 󰤥
+        - 󰤨
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: System
+        alignment: right
+        direction: down
+        offset_top: 6
+        offset_left: 0
+        wifi_icons_secured:
+          - 󰤡
+          - 󰤤
+          - 󰤧
+          - 󰤪
+        wifi_icons_unsecured:
+          - 󰤠
+          - 󰤣
+          - 󰤦
+          - 󰤩
+  bluetooth:
+    type: yasb.bluetooth.BluetoothWidget
+    options:
+      label: '{device_count} <span>{icon}</span>'
+      label_alt: '{device_name} <span>{icon}</span>'
+      label_no_device: 'No devices connected'
+      label_device_separator: ', '
+      max_length: 22
+      max_length_ellipsis: '…'
+      icons:
+        bluetooth_on:        󰂯
+        bluetooth_off:       󰂲
+        bluetooth_connected: 
+      callbacks:
+        on_left: do_nothing
+        on_middle: 'exec cmd /c start ms-settings:bluetooth'
+        on_right: toggle_label
+  battery:
+    type: yasb.battery.BatteryWidget
+    options:
+      label: '{percent}% <span>{icon}</span>'
+      label_alt: '{percent}% <span>{icon}</span> | {power}W | {time_remaining}'
+      update_interval: 1000
+      time_remaining_natural: False
+      hide_unsupported: True
+      charging_options:
+        icon_format: '{charging_icon}'
+        blink_charging_icon: true
+        blink_interval: 500
+      status_thresholds:
+        critical: 10
+        low: 25
+        medium: 75
+        high: 95
+        full: 100
+      status_icons:
+        icon_charging: 
+        icon_critical: 
+        icon_low:      
+        icon_medium:   
+        icon_high:     
+        icon_full:     
+      callbacks:
+        on_left:   do_nothing
+        on_middle: 'exec cmd /c start ms-settings:batterysaver'
+        on_right:  toggle_label
+  notifications:
+    type: yasb.notifications.NotificationsWidget
+    options:
+      label:     '<span></span>'
+      label_alt: '{count} notifications <span></span>'
+      hide_empty: true
+      tooltip: false
+      callbacks:
+        on_left: toggle_notification
+        on_middle: do_nothing
+        on_right: toggle_label
+  settings:
+    type: yasb.custom.CustomWidget
+    options:
+      label: '<span></span>'
+      class_name: settings-widget
+      exec_options:
+        run_cmd: 'echo ""'
+        run_once: true
+        return_format: string
+      callbacks:
+        on_left: 'exec quick_settings'
+        on_middle: 'exec control'
+        on_right: 'exec cmd /c start ms-settings:'
+  power_menu:
+    type: yasb.power_menu.PowerMenuWidget
+    options:
+      # label: "<span>\uE712</span>"
+      label: '<span>⏻</span>'
+      uptime: true
+      show_user: true
+      menu_style: popup
+      popup:
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: System
+        alignment: right
+        offset_left: 0
+      profile_image_size: 64
+      buttons:
+        lock:
+        - "\uDB80\uDF41"
+        - Lock
+        signout:
+        - "\uDB80\uDF43"
+        - Sign out
+        sleep:
+        - "\uDB82\uDD04"
+        - Sleep
+        hibernate:
+        - "\uDB82\uDD01"
+        - Hibernate
+        restart:
+        - "\uDB81\uDC53"
+        - Restart
+        shutdown:
+        - "\uDB82\uDD06"
+        - Shut Down
+        cancel:
+        - ""
+        - Cancel
+
+  # BOTTOM MENU
+  
+  # Left
+
+  active_window:
+    type: yasb.active_window.ActiveWindowWidget
+    options:
+      label: '{win[title]}'
+      label_alt: '[class_name=''{win[class_name]}'' exe=''{win[process][name]}'' hwnd={win[hwnd]}]'
+      label_no_window: ''
+      label_icon: true
+      label_icon_size: 16
+      max_length: 32
+      max_length_ellipsis: '...'
+      monitor_exclusive: false
+
+  # Right
+
   media:
     type: yasb.media.MediaWidget
     options:
@@ -412,13 +642,3 @@ widgets:
         enabled: true
         style: bounce
         update_interval_ms: 40
-  language:
-    type: "yasb.language.LanguageWidget"
-    options:
-      label: "󰌌 {lang[language_code]}"
-      update_interval: 1
-  bluetooth:
-    type: "yasb.bluetooth.BluetoothWidget"
-    options:
-      label: "{icon}"
-      label_no_device: "No devices connected"
