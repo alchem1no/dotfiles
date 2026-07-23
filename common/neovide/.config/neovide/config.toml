@@ -5,7 +5,7 @@ idle = true
 # frame = "none"
 
 [font]
-normal = { family = "FiraCode Nerd Font" }
+normal = ["FiraCode Nerd Font"]
 size = 14
 
 [box-drawing]
