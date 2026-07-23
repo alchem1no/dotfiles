@@ -38,6 +38,7 @@ bars:
       left:
       - home
       - quick_launch
+      - komorebi_control
       - komorebi_workspaces
       - cpu
       - gpu
@@ -165,6 +166,28 @@ widgets:
       - keys: alt+d
         action: toggle_quick_launch
         screen: primary
+  komorebi_control:
+      type: komorebi.control.KomorebiControlWidget
+      options:
+        # label: "<span>\udb80\uddd9</span>"
+        label: "<span>󱁇</span>"
+        icons:
+          start: "\uead3"
+          stop: "\uead7"
+          reload: "\uead2"
+        run_ahk: true
+        run_whkd: true
+        run_masir: true
+        show_version: true
+        komorebi_menu:
+          blur: true
+          round_corners: true
+          round_corners_type: normal
+          border_color: System
+          alignment: left
+          direction: down
+          offset_top: 6
+          offset_left: 0
   komorebi_workspaces:
     type: komorebi.workspaces.WorkspaceWidget
     options:

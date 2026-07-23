@@ -453,7 +453,20 @@
     background: rgb(19, 90, 204);
 }
 
-/* Komorebi Workspace */
+/* Komorebi */
+
+/* Control */
+.komorebi-control-widget,
+.komorebi-control-widget .icon
+{
+    color:        var(--tn-blue);
+    border-color: var(--tn-blue);
+}
+.komorebi-control-widget .icon {
+    padding-right: 4px;
+}
+
+/* Workspaces */
 .komorebi-workspaces,
 .komorebi-workspaces:hover
 {
