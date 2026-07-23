@@ -1,4 +1,8 @@
 local g = vim.g
+local o = vim.o
+
+-- Style
+o.guifont = "FiraCode Nerd Font:h14"
 
 -- Padding
 g.neovide_padding_top = 8
