@@ -88,7 +88,7 @@ local binds = {
         hl.dsp.exec_cmd(apps.bt_menu)
     },
     {
-        mainMod .. " + CTRL + F4",
+        mainMod .. " + CTRL + F3",
         notify.reload_config(
             apps.network_manager_reload_command,
             apps.network_manager
