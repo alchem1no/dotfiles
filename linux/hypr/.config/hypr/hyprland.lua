@@ -18,4 +18,4 @@ try_require("hyprland.windows_and_workspaces")
 -- try_require("hyprland.debug")
 
 -- HyprMod managed settings
-try_require("hyprland.hyprland-gui")
+try_require("hyprland.hyprland_gui")
