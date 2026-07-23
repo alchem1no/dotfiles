@@ -437,7 +437,7 @@ widgets:
   wifi:
     type: yasb.wifi.WifiWidget
     options:
-      label: '{wifi_icon}'
+      label: '{wifi_strength}% {wifi_icon}'
       label_alt: '{wifi_name} {wifi_strength}% {wifi_icon}'
       update_interval: 5000
       callbacks:
