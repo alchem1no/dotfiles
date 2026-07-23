@@ -1202,6 +1202,7 @@
 }
 
 /* Battery */
+/*
 .battery-widget,
 .battery-widget .icon,
 .battery-widget .label
@@ -1209,6 +1210,7 @@
     color:        var(--tn-blue);
     border-color: var(--tn-blue);
 }
+*/
 .battery-widget {
     padding-left:  7px;
     padding-right: 9px;
@@ -1216,21 +1218,6 @@
 .battery-widget .icon {
     padding-left:  8px;
     padding-right: 2px;
-}
-.battery-widget .label.status-critical {
-    color: var(--tn-red);
-}
-.battery-widget .label.status-low {
-    color: var(--tn-orange);
-}
-.battery-widget .label.status-medium {
-    color: var(--tn-fg);
-}
-.battery-widget .label.status-high {
-    color: var(--tn-blue);
-}
-.battery-widget .label.status-medium {
-    color: var(--tn-green);
 }
 
 /* Custom: Settings */
