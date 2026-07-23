@@ -1,5 +1,3 @@
-local u = "uwsm app -- "
-
 local apps       = require("config.apps")
 local wrap       = require("lib.uwsm_wrapper")
 local monitors   = require("lib.monitors")
