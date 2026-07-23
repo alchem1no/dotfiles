@@ -183,13 +183,13 @@ local binds = {
     },
     {
         {
-            mainMod .. " + CTRL + T",
+            mainMod .. " + SHIFT + T",
             "CTRL + SHIFT + ALT + T",
         },
         hl.dsp.exec_cmd(wrap(apps.terminal_secondary_shell))
     },
     {
-        mainMod .. " + SHIFT + T",
+        mainMod .. " + CTRL + T",
         hl.dsp.exec_cmd(wrap(apps.terminal2))
     },
     {
