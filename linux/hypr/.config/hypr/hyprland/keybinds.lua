@@ -209,15 +209,15 @@ local binds = {
         hl.dsp.exec_cmd(wrap(apps.file_manager_cli))
     },
     {
-        mainMod .. " + N",
+        mainMod .. " + C",
         hl.dsp.exec_cmd(wrap(apps.editor))
     },
     {
-        mainMod .. " + B",
+        mainMod .. " + W",
         hl.dsp.exec_cmd(wrap(apps.browser))
     },
     {
-        mainMod .. " + SHIFT + B",
+        mainMod .. " + SHIFT + W",
         hl.dsp.exec_cmd(wrap(apps.browser2))
     },
     {
