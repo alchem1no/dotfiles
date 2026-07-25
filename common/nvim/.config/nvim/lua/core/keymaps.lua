@@ -20,9 +20,9 @@ map("n", "<C-s>", "<cmd>w<CR>", {
 map("n", "<C-w>", "<cmd>q<CR>", {
     desc = "Close (classic editor shortcut)"
 })
-map("n", "<leader>R", "<cmd>restart<CR>", {
-    desc = "Restart Neovim (not fully)"
-})
+-- map("n", "<leader>a", "<cmd>restart<CR>", {
+--     desc = "Restart Neovim (not fully)"
+-- })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", {
     desc = "Clear search highlight"
 })
@@ -88,9 +88,9 @@ end, {
 --     desc = "",
 -- })
 
-map("n", "<F10>", "<cmd>Neotree toggle<CR>", {
-    desc = "Toggle Neotree",
-})
+-- map("n", "<F10>", "<cmd>Neotree toggle<CR>", {
+--     desc = "Toggle Neotree",
+-- })
 
 map("n", "<F12>", function()
     cmd("nohlsearch")
