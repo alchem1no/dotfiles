@@ -1,16 +1,15 @@
+local CONST = require("constants")
+
 local apply_tokyonight =
     require("utils.apply_tokyonight").apply_tokyonight
 local is_dark_mode =
     require("utils.is_dark_mode").is_dark_mode
-local HEX_TRANSPARENCY = "cc"
-local THEME_DARK = "night"
-local THEME_LIGHT = "night"
 
 if vim.g.neovide then
     apply_tokyonight(
-        is_dark_mode() and THEME_DARK or THEME_LIGHT,
-        HEX_TRANSPARENCY
+        is_dark_mode() and CONST.THEME_DARK or CONST.THEME_LIGHT,
+        CONST.HEX_TRANSPARENCY
     )
 else
-    apply_tokyonight(THEME_DARK, HEX_TRANSPARENCY)
+    apply_tokyonight(CONST.THEME_DARK, CONST.HEX_TRANSPARENCY)
 end

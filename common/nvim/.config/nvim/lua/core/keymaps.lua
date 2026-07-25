@@ -1,8 +1,9 @@
+local CONST = require("constants")
+
 local map = vim.keymap.set
 local cmd = vim.cmd
 local g = vim.g
 local notify = vim.notify
-local HEX_TRANSPARENCY = "cc"
 local apply_tokyonight =
     require("utils.apply_tokyonight").apply_tokyonight
 -- local myos = require("core.myos")
@@ -261,25 +262,25 @@ termmap(
 --------------------------------------------------
 
 map ("n", "<leader>utd", function()
-    apply_tokyonight("day", HEX_TRANSPARENCY)
+    apply_tokyonight("day", CONST.HEX_TRANSPARENCY)
 end, {
     desc = "Tokyo Night Day"
 })
 
 map ("n", "<leader>utn", function()
-    apply_tokyonight("night", HEX_TRANSPARENCY)
+    apply_tokyonight("night", CONST.HEX_TRANSPARENCY)
 end, {
     desc = "Tokyo Night Night"
 })
 
 map ("n", "<leader>utm", function()
-    apply_tokyonight("moon", HEX_TRANSPARENCY)
+    apply_tokyonight("moon", CONST.HEX_TRANSPARENCY)
 end, {
     desc = "Tokyo Night Moon"
 })
 
 map ("n", "<leader>uts", function()
-    apply_tokyonight("storm", HEX_TRANSPARENCY)
+    apply_tokyonight("storm", CONST.HEX_TRANSPARENCY)
 end, {
     desc = "Tokyo Night Storm"
 })
