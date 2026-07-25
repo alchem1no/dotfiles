@@ -325,7 +325,7 @@ end
 --- Lazygit ---
 ---------------
 
-map("n", "<leader>lg", "<cmd>LazyGitCurrentFile<CR>", {
+map("n", "<leader>l", "<cmd>LazyGitCurrentFile<CR>", {
     desc = "LazyGit"
 })
 
