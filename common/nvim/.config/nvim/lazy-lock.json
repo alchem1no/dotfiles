@@ -5,6 +5,7 @@
   "blink.lib": { "branch": "main", "commit": "b127d48bf8e9ac9cf41f6e0fbead317503f76558" },
   "bufdelete.nvim": { "branch": "master", "commit": "f6bcea78afb3060b198125256f897040538bcb81" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
+  "code_runner.nvim": { "branch": "main", "commit": "97e6c71f3d96baac078ceb516da83258996c1517" },
   "codecompanion.nvim": { "branch": "main", "commit": "e203cc629ad88b55f16f213ba98d861f5c3898d5" },
   "conform.nvim": { "branch": "master", "commit": "619363c30309d29ffa631e67c8183f2a72caa373" },
   "edgy.nvim": { "branch": "main", "commit": "8bfd2808994a988c975694122f68624b8a219f5f" },
