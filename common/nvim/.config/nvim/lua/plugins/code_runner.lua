@@ -15,8 +15,8 @@ return {
             })
         end,
         keys = {
-            { '<leader>rr',  '<cmd>RunCode<CR>', desc = 'Run Code' },
-            { '<leader>rf', '<cmd>RunFile<CR>', desc = 'Run File' },
+            { '<leader>rr', '<cmd>RunCode<CR>',  desc = 'Run Code' },
+            { '<leader>rf', '<cmd>RunFile<CR>',  desc = 'Run File' },
             { '<leader>rc', '<cmd>RunClose<CR>', desc = 'Close Runner Window' },
         },
     }
