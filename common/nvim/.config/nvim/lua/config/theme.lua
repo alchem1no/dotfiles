@@ -4,7 +4,7 @@ local is_dark_mode =
     require("utils.is_dark_mode").is_dark_mode
 local HEX_TRANSPARENCY = "cc"
 local THEME_DARK = "night"
-local THEME_LIGHT = "storm"
+local THEME_LIGHT = "night"
 
 if vim.g.neovide then
     apply_tokyonight(
