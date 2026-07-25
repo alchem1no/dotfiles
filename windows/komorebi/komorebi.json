@@ -4,11 +4,11 @@
     "bar_configurations": [],
     "animation": {
         "enabled": false,
-        "duration": 250,
+        "duration": 50,
         "fps": 60,
-        "style": "EaseOutExpo"
+        "style": "Linear"
     },
-    "mouse_follows_focus": false,
+    "mouse_follows_focus": true,
     "cross_monitor_move_behaviour": "Insert",
     "transparency": true,
     "transparency_alpha": 220,
@@ -68,7 +68,12 @@
             "workspaces": [
                 {
                     "name": "1  ",
-                    "layout": "BSP"
+                    "layout": "Scrolling",
+                    "layout_options": {
+                        "scrolling": {
+                            "columns": 2
+                        }
+                    }
                 },
                 {
                     "name": "2  ",
@@ -80,7 +85,7 @@
                 },
                 {
                     "name": "4  ",
-                    "layout": "Grid"
+                    "layout": "BSP"
                 },
                 {
                     "name": "5  ",
@@ -88,7 +93,7 @@
                 },
                 {
                     "name": "6 󰂽 ",
-                    "layout": "VerticalStack"
+                    "layout": "BSP"
                 },
                 {
                     "name": "7  ",
@@ -96,6 +101,10 @@
                 },
                 {
                     "name": "8  ",
+                    "layout": "BSP"
+                },
+                {
+                    "name": "9  ",
                     "layout": "BSP"
                 }
             ]
