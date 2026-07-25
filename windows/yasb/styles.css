@@ -1250,7 +1250,8 @@
 
 /* Notifications */
 .notification-widget,
-.notification-widget .icon
+.notification-widget .icon,
+.notification-widget .label
 {
     color:        var(--tn-green1);
     border-color: var(--tn-green1);
