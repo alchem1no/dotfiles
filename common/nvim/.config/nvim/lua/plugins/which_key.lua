@@ -18,7 +18,8 @@ return {
                 { "<leader>x", group = "Trouble" },
                 { "<leader>b", group = "Bufferline" },
                 { "<leader>h", group = "Harpoon" },
-                { "<leaaer>l", group = "Lazy{smth]" },
+                { "<leaaer>l", group = "LazyGit" },
+                { "<leader>c", group = "Code_Runner" }
             })
         end,
     },
