@@ -68,11 +68,7 @@ map("n", "<F4>", "<cmd>Trouble diagnostics toggle<CR>", {
     desc = "Diagnostics",
 })
 
-map("n", "<F5>", "<cmd>write | !python %<CR>", {
-    desc = "Run File (Python)",
-})
-
-map("n", "<F6>", "<cmd>ToggleTerm<CR>", {
+map("n", "<F5>", "<cmd>ToggleTerm<CR>", {
     desc = "ToggleTerm",
 })
 
