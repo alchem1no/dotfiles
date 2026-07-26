@@ -1,11 +1,11 @@
-.shell powershell
+.shell pwsh
 
 # Reload whkd configuration
 # alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
-alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
-alt + shift + o         : komorebic reload-configuration
-ctrl + alt + o          : yasbc reload
-# ctrl + alt + shift + o  : taskkill /f /im kanata.exe; kanata_gui_winIOv2_x64.exe -c caps-lock-to-LCtrl-Esc.kbd
+alt + o                 : Stop-Process -Name whkd -Force -ErrorAction SilentlyContinue; Start-Process whkd -WindowStyle hidden; New-BurntToastNotification -Text "WHKD", "Reloaded successfully"
+alt + shift + o         : komorebic reload-configuration; New-BurntToastNotification -Text "Komorebi", "Reloaded successfully"
+ctrl + alt + o          : yasbc reload; New-BurntToastNotification -Text "YASB", "Reloaded successfully"
+# ctrl + alt + shift + o  : Stop-Process -Name kanata -Force -ErrorAction SilentlyContinue; kanata_gui_winIOv2_x64.exe -c caps-lock-to-LCtrl-Esc.kbd; New-BurntToastNotification -Text "Kanata", "Reloaded successfully"
 
 alt + i                 : komorebic toggle-shortcuts
 alt + shift + f2        : yasbc toggle-bar
@@ -16,17 +16,15 @@ alt + shift + f2        : yasbc toggle-bar
 
 # Basic
 alt + q                 : komorebic close
-# alt + m                 : komorebic minimize
 
-# Change theme
-# alt + shift + t         : pwsh -ExecutionPolicy Bypass -File "$HOME/.config/komorebi-switch-theme.ps1"
-
-# Launch programs
-alt + t                 : wt        # Terminal
-alt + c                 : neovide   # Editor
-alt + w                 : brave     # Browser 1st
-alt + shift + w         : firefox   # Browser 2nd
-alt + m                 : telegram  # Messenger
+# Launch apps
+# Make sure they are added to PATH
+alt + t                 : wt              # Terminal
+alt + c                 : neovide         # Editor
+alt + w                 : brave           # Browser 1st
+alt + shift + w         : firefox         # Browser 2nd
+alt + m                 : telegram        # Messenger
+alt + a                 : start claude:// # AI client
 
 # Focus windows
 alt + h                 : komorebic focus left
