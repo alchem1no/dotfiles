@@ -48,9 +48,17 @@ function Set-LocationVisible {
     Set-Location $Path && Get-ChildItem
 }
 
+# Aliases (simple & advanced using functions)
 # fcd - find program directory
 Set-Alias fcd  Get-ProgramDirectory
 Set-Alias cdls Set-LocationVisible
+
+Set-Alias v nvim
+Set-Alias vi nvim
+
+function Q {
+    exit
+}
 
 if ($IsWindows) {
     Remove-Alias ls
