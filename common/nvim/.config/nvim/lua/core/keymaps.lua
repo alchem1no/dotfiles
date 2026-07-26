@@ -12,9 +12,6 @@ local apply_tokyonight =
 -- Basic
 --------------------------------------------------
 
-map("n", "<leader><leader>", "<cmd>source %<CR>", {
-    desc = "Source current file"
-})
 map("n", "<C-s>", "<cmd>w<CR>", {
     desc = "Save file (classic editor shortcut)"
 })
@@ -30,13 +27,6 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>", {
 map ("n", "<C-\\>", "<cmd>terminal<CR>", {
     desc = "Open Neovim's built-in terminal"
 })
-
---------------------------------------------------
--- Set <leader> key
---------------------------------------------------
-
-g.mapleader = " "
-g.maplocalleader = "\\"
 
 --------------------------------------------------
 -- Open Oil
@@ -69,10 +59,6 @@ map("n", "<F4>", "<cmd>Trouble diagnostics toggle<CR>", {
     desc = "Diagnostics",
 })
 
-map("n", "<F5>", "<cmd>ToggleTerm<CR>", {
-    desc = "ToggleTerm",
-})
-
 map("n", "<F8>", function()
     g.autoformat = not g.autoformat
 
@@ -93,13 +79,58 @@ end, {
 --     desc = "Toggle Neotree",
 -- })
 
-map("n", "<F12>", function()
-    cmd("nohlsearch")
-    cmd("silent! cclose")
-    cmd("silent! lclose")
-    cmd("silent! TroubleClose")
+map("n", "<F12>", "<cmd>ToggleTerm<CR>", {
+    desc = "ToggleTerm",
+})
+
+-- map("n", "<F12>", function()
+--     cmd("nohlsearch")
+--     cmd("silent! cclose")
+--     cmd("silent! lclose")
+--     cmd("silent! TroubleClose")
+-- end, {
+--     desc = "Cleanup UI",
+-- })
+
+--------------------------------------------------
+-- Set <leader> key
+--------------------------------------------------
+
+g.mapleader = " "       -- Space key
+g.maplocalleader = "\\" -- Backslash key
+
+--------------------------------------------------
+-- Local leader key
+--------------------------------------------------
+
+map("n", "<localleader>s", "<cmd>w<CR>", {
+    desc = "Save file"
+})
+
+map("n", "<localleader>r", function()
+    local filename = vim.api.nvim_buf_get_name(0)
+    local extension = vim.fn.fnamemodify(filename, ":e")
+
+    if extension == "lua" then
+        -- Source the file silently
+        vim.cmd("source %")
+        vim.notify("File sourced", vim.log.levels.INFO, {
+            title = "Neovim"
+        })
+    else
+        -- Show notification for non-lua files
+        vim.notify("Cannot source: Not a Lua file",
+            vim.log.levels.WARN, {
+                title = "Neovim"
+            }
+        )
+    end
 end, {
-    desc = "Cleanup UI",
+    desc = "Source file in Neovim"
+})
+
+map("n", "<localleader>q", "<cmd>q<CR>", {
+    desc = "Quit"
 })
 
 --------------------------------------------------
