@@ -18,6 +18,7 @@
 
 ### Optional (quality-of-life)
 
+- stow          — making symlinks fast
 - fzf           — fast finder, can be integrated into zsh
 - eza           — better `ls`
 - luarocks      — for `rocks.nvim` (not currently used)
