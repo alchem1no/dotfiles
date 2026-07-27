@@ -1,9 +1,12 @@
+local CONST = require("constants")
 local M = {}
 
 -- hex_transparency is a string of 2 hex symbols, representing
 -- alpha channel
 function M.apply_tokyonight(theme_style, hex_transparency)
     local dark = theme_style ~= "day"
+
+    hex_transparency = hex_transparency or CONST.HEX_TRANSPARENCY
 
     vim.o.background = dark and "dark" or "light"
 
