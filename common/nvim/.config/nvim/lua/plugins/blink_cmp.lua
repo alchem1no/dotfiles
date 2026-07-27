@@ -4,13 +4,8 @@ return {
         version = "1.*",
 
         dependencies = {
-            "saghen/blink.lib",
             "rafamadriz/friendly-snippets",
         },
-
-        build = function()
-            require("blink.cmp").build():wait(60000)
-        end,
 
         opts = function()
             local has_autopairs =
