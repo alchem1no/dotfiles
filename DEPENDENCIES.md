@@ -19,13 +19,43 @@
 ### Optional (quality-of-life)
 
 - fzf           — fast finder, can be integrated into zsh
-- eza           - better `ls`
+- eza           — better `ls`
 - luarocks      — for `rocks.nvim` (not currently used)
+- tmux          — terminal multiplexer
+
+## Linux
+
+### Systemd services to enable
+
+- hyprpolkitagent
+- hypridle
+- hyprpaper
+- ydotoold
+- dunst
+- elephant
+- opentabletdriver
+
+Other:
+- paccache.timer
 
 ### Install on Arch
 
 ```
-sudo pacman -S git nodejs npm rust luarocks clang gcc make python python-pip fzf fd ripgrep lazygit xkb-switch
+sudo pacman -Syu
+sudo pacman -S git curl wget zsh tar gzip xkb-switch \
+    neovim ripgrep fd bat eza zoxide fzf sharship lazygit \
+    tmux btop jq trash-cli \
+    gcc clang make cmake nodejs npm rust python python-pip luarocks
+```
+
+### Install on openSUSE Tumbleweed
+
+```
+sudo zypper refresh && sudo zypper dup
+sudo zypper install git curl wget zsh tar gzip \
+    neovim ripgrep fd bat eza zoxide fzf starship lazygit \
+    tmux btop jq trash-cli \
+    gcc clang make cmake nodejs npm rust python311 python311-pip luarocks
 ```
 
 ### LaTeX (Optional)
@@ -34,19 +64,27 @@ sudo pacman -S git nodejs npm rust luarocks clang gcc make python python-pip fzf
 pacman -S texlive-most zathura zathura-pdf-mupdf
 ```
 
-### Install on Windows
 
-#### WinGet
+## Install on Windows
+
+### WinGet
 
 ```
-winget install OpenJS.NodeJS Rustlang.Rustup BurntSushi.ripgrep.MSVC junegunn.fzf Jesse.Lazygit Git.Git Kitware.CMake
+winget install Microsoft.PowerShell OpenJS.NodeJS Rustlang.Rustup BurntSushi.ripgrep.MSVC junegunn.fzf Jesse.Lazygit Git.Git Kitware.CMake
 ```
 
-#### Scoop
+### Scoop
 
 ```
 scoop bucket add scoop-it https://github.com/younger-1/scoop-it
 scoop install im-select
+```
+
+### Powershell
+
+```Powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Install-Module -Name BurntToast -Scope CurrentUser
 ```
 
 ## Neovim
@@ -73,6 +111,6 @@ scoop install im-select
 
 ### PowerShell module installation
 
-```
+```Powershell
 Install-Module Terminal-Icons, ZLocation, posh-git, PSFzf -Scope CurrentUser
 ```
