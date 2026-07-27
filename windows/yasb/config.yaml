@@ -280,7 +280,7 @@ widgets:
     type: komorebi.active_layout.ActiveLayoutWidget
     options:
       hide_if_offline: true
-      label: '{layout_name} <span>{icon} </span>'
+      label: '<span>{icon}</span>'
       layouts: [
         'bsp', 'columns', 'rows', 'grid',
         'scrolling', 'vertical_stack', 'horizontal_stack',
