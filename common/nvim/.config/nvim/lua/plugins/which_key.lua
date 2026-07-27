@@ -10,16 +10,19 @@ return {
             wk.setup()
 
             wk.add({
+                { "<leader>a", group = "CodeCompanion" },
+                { "<leader>b", group = "Bufferline" },
+                { "<leader>c", group = "Code_Runner" },
                 { "<leader>f", group = "Search" },
                 { "<leader>g", group = "Git" },
+                { "<leader>h", group = "Harpoon" },
                 { "<leader>l", group = "LazyGit" },
+                { "<leader>q", group = "Persistence" },
+                { "<leader>r", group = "Runner" },
                 { "<leader>s", group = "Split" },
                 { "<leader>t", group = "Toggle" },
                 { "<leader>u", group = "UI" },
                 { "<leader>x", group = "Trouble" },
-                { "<leader>b", group = "Bufferline" },
-                { "<leader>h", group = "Harpoon" },
-                { "<leader>c", group = "Code_Runner" }
             })
         end,
     },
