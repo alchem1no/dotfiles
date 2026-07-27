@@ -73,6 +73,11 @@
 
     // Single monitor, 9 workspaces
     // BSP stands for "Binary Space Partitioning"
+    layout_defaults: {
+        scrolling: {
+            columns: 2,
+        },
+    },
     monitors: [
         {
             workspaces: [

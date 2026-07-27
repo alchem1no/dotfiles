@@ -65,6 +65,11 @@
       "matching_strategy": "Equals"
     }
   ],
+  "layout_defaults": {
+    "scrolling": {
+      "columns": 2
+    }
+  },
   "monitors": [
     {
       "workspaces": [
