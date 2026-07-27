@@ -183,6 +183,13 @@
                 "tabTitle": "Neovim"
             },
             {
+                "guid": "{bc2da056-dd06-5879-b969-1dfcefc8d2c7}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "openSUSE-Tumbleweed",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
                 "elevate": false,
                 "guid": "{3f0dd91c-6483-5a0a-a0ae-d05da97e3219}",
                 "hidden": false,
@@ -238,13 +245,6 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 18",
                 "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{bc2da056-dd06-5879-b969-1dfcefc8d2c7}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "openSUSE-Tumbleweed",
-                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
