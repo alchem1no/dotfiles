@@ -78,7 +78,12 @@
             workspaces: [
                 {
                     name: "1  ",
-                    layout: "BSP",
+                    layout: "Scrolling",
+                    layout_options: {
+                        scrolling: {
+                            columns: 2,
+                        },
+                    },
                 },
                 {
                     name: "2  ",
