@@ -66,7 +66,7 @@
     }
   ],
   "layout_defaults": {
-    "scrolling": {
+    "Scrolling": {
       "columns": 2
     }
   },
