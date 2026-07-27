@@ -16,14 +16,6 @@
             "id": "User.paste"
         },
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command": "toggleFocusMode",
-            "id": "User.toggleFocusMode"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -31,6 +23,14 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "toggleFocusMode",
+            "id": "User.toggleFocusMode"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": 
@@ -92,16 +92,12 @@
     "keybindings": 
     [
         {
-            "id": "User.OpenProfile.FarManager",
-            "keys": "ctrl+alt+f"
-        },
-        {
             "id": "User.copy.644BA8F2",
             "keys": "ctrl+c"
         },
         {
-            "id": "User.OpenProfile.PowerShell",
-            "keys": "ctrl+alt+p"
+            "id": "User.OpenProfile.FarManager",
+            "keys": "ctrl+alt+f"
         },
         {
             "id": "User.paste",
@@ -110,6 +106,10 @@
         {
             "id": "User.find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.OpenProfile.PowerShell",
+            "keys": "ctrl+alt+p"
         },
         {
             "id": "User.splitPane.A6751878",
@@ -265,77 +265,85 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 18",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
             }
         ]
     },
     "schemes": 
     [
         {
+            "background": "#1A1B2C",
+            "black": "#414868",
+            "blue": "#7AA2F7",
+            "brightBlack": "#414868",
+            "brightBlue": "#7AA2F7",
+            "brightCyan": "#7DCFFF",
+            "brightGreen": "#9ECE6A",
+            "brightPurple": "#BB9AF7",
+            "brightRed": "#F7768E",
+            "brightWhite": "#C0CAF5",
+            "brightYellow": "#E0AF68",
+            "cursorColor": "#C0CAF5",
+            "cyan": "#7DCFFF",
+            "foreground": "#A9B1DC",
+            "green": "#9ECE6A",
             "name": "Tokyo Night",
-            "foreground": "#a9b1dc",
-            "background": "#1a1b2c",
-            "cursorColor": "#c0caf5",
-            "selectionBackground": "#28344a",
-            "black": "#414868",
-            "red": "#f7768e",
-            "green": "#9ece6a",
-            "yellow": "#e0af68",
-            "blue": "#7aa2f7",
-            "purple": "#bb9af7",
-            "cyan": "#7dcfff",
-            "white": "#c0caf5",
-            "brightBlack": "#414868",
-            "brightRed": "#f7768e",
-            "brightGreen": "#9ece6a",
-            "brightYellow": "#e0af68",
-            "brightBlue": "#7aa2f7",
-            "brightPurple": "#bb9af7",
-            "brightCyan": "#7dcfff",
-            "brightWhite": "#c0caf5"
+            "purple": "#BB9AF7",
+            "red": "#F7768E",
+            "selectionBackground": "#28344A",
+            "white": "#C0CAF5",
+            "yellow": "#E0AF68"
         },
         {
-            "name": "Tokyo Night Storm",
-            "foreground": "#a9b1dc",
-            "background": "#24283b",
-            "cursorColor": "#c0caf5",
-            "selectionBackground": "#28344a",
-            "black": "#414868",
-            "red": "#f7768e",
-            "green": "#73daca",
-            "yellow": "#e0af68",
-            "blue": "#7aa2f7",
-            "purple": "#bb9af7",
-            "cyan": "#7dcfff",
-            "white": "#c0caf5",
-            "brightBlack": "#414868",
-            "brightRed": "#f7768e",
-            "brightGreen": "#73daca",
-            "brightYellow": "#e0af68",
-            "brightBlue": "#7aa2f7",
-            "brightPurple": "#bb9af7",
-            "brightCyan": "#7dcfff",
-            "brightWhite": "#c0caf5"
-        },
-        {
+            "background": "#D5D6DB",
+            "black": "#0F0F14",
+            "blue": "#34548A",
+            "brightBlack": "#0F0F14",
+            "brightBlue": "#34548A",
+            "brightCyan": "#0F4B6E",
+            "brightGreen": "#33635C",
+            "brightPurple": "#5A4A78",
+            "brightRed": "#8C4351",
+            "brightWhite": "#343B58",
+            "brightYellow": "#8F5815",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#0F4B6E",
+            "foreground": "#343B58",
+            "green": "#33635C",
             "name": "Tokyo Night Light",
-            "foreground": "#343b58",
-            "background": "#d5d6db",
-            "black": "#0f0f14",
-            "red": "#8c4351",
-            "green": "#33635c",
-            "yellow": "#8f5815",
-            "blue": "#34548a",
-            "purple": "#5a4a78",
-            "cyan": "#0f4b6e",
-            "white": "#343b58",
-            "brightBlack": "#0f0f14",
-            "brightRed": "#8c4351",
-            "brightGreen": "#33635c",
-            "brightYellow": "#8f5815",
-            "brightBlue": "#34548a",
-            "brightPurple": "#5a4a78",
-            "brightCyan": "#0f4b6e",
-            "brightWhite": "#343b58"
+            "purple": "#5A4A78",
+            "red": "#8C4351",
+            "selectionBackground": "#FFFFFF",
+            "white": "#343B58",
+            "yellow": "#8F5815"
+        },
+        {
+            "background": "#24283B",
+            "black": "#414868",
+            "blue": "#7AA2F7",
+            "brightBlack": "#414868",
+            "brightBlue": "#7AA2F7",
+            "brightCyan": "#7DCFFF",
+            "brightGreen": "#73DACA",
+            "brightPurple": "#BB9AF7",
+            "brightRed": "#F7768E",
+            "brightWhite": "#C0CAF5",
+            "brightYellow": "#E0AF68",
+            "cursorColor": "#C0CAF5",
+            "cyan": "#7DCFFF",
+            "foreground": "#A9B1DC",
+            "green": "#73DACA",
+            "name": "Tokyo Night Storm",
+            "purple": "#BB9AF7",
+            "red": "#F7768E",
+            "selectionBackground": "#28344A",
+            "white": "#C0CAF5",
+            "yellow": "#E0AF68"
         }
     ],
     "showTabsFullscreen": true,
