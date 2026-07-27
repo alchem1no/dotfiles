@@ -48,6 +48,10 @@ It's advised to create symlinks in `%LOCALAPPDATA%` directory to save space on d
 ~~You can use `create-symlink.ps1` file for that, just launch it from terminal by typing `.\cread-symlink.ps1` in PowerShell terminal.~~
 Not ready yet.
 
+## Other notes
+
+Managing some JSON configs is done through JSON5 configs with translation to regular JSON. This repos comes with prebundled npm `json5` package you can use right away: cd to your local repo and run `node json5-build.js --config targets.json5`
+
 ## To-Do
 
 - [ ] Make Hyprland animations slower

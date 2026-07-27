@@ -1,0 +1,12 @@
+{
+  targets: [
+      {
+          src: "linux/waybar/.config/waybar/config.json5",
+          out: "linux/waybar/.config/waybar/config.json"
+      },
+      {
+          src: "windows/komorebi/komorebi.json5",
+          out: "windows/komorebi/komorebi.json"
+      },
+  ]
+}

@@ -1,9 +1,9 @@
-$configKomorebi = "$HOME\.config\komorebi"
-$configWhkd     = "$HOME\.config"
+$configFolderKomorebi = "$HOME\.config\komorebi"
+$configFolder     = "$HOME\.config"
 
 [Environment]::SetEnvironmentVariable(
     "KOMOREBI_CONFIG_HOME",
-    $configKomorebi,
+    $configFolderKomorebi,
     "User"
 )
 
@@ -14,7 +14,7 @@ $storedValueKomorebi = [Environment]::GetEnvironmentVariable(
 
 [Environment]::SetEnvironmentVariable(
     "KOMOREBI_CONFIG_HOME",
-    $configWhkd,
+    $configFolder,
     "User"
 )
 
@@ -23,14 +23,14 @@ $storedValueWhkd = [Environment]::GetEnvironmentVariable(
     "User"
 )
 
-if ($storedValueKomorebi -eq $configKomorebi) {
+if ($storedValueKomorebi -eq $configFolderKomorebi) {
     Write-Host "KOMOREBI_CONFIG_HOME successfully set to: $storedValueKomorebi"
 }
 else {
     Write-Host "Failed to set KOMOREBI_CONFIG_HOME"
 }
 
-if ($storedValueWhkd -eq $configWhkd) {
+if ($storedValueWhkd -eq $configFolder) {
     Write-Host "WHKD_CONFIG_HOME successfully set to: $storedValueWhkd"
 }
 else {

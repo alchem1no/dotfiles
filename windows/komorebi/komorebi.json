@@ -1,113 +1,115 @@
 {
-    "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
-    "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
-    "bar_configurations": [],
-    "animation": {
-        "enabled": false,
-        "duration": 50,
-        "fps": 60,
-        "style": "Linear"
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
+  "app_specific_configuration_path": "$Env:KOMOREBI_CONFIG_HOME/applications.json",
+  "bar_configurations": [],
+  "animation": {
+    "enabled": false,
+    "duration": 50,
+    "fps": 60,
+    "style": "Linear"
+  },
+  "mouse_follows_focus": true,
+  "window_handling_behaviour": "Sync",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "transparency": true,
+  "transparency_alpha": 220,
+  "default_workspace_padding": 6,
+  "default_container_padding": 6,
+  "global_work_area_offset": {
+    "left": 0,
+    "top": 0,
+    "right": 0,
+    "bottom": 0
+  },
+  "border": true,
+  "border_width": 6,
+  "border_offset": -1,
+  "theme": {
+    "palette": "Base16",
+    "name": "TokyoNightDark",
+    "single_border": "Base0E",
+    "stack_border": "Base0B",
+    "monocle_border": "Base0D",
+    "floating_border": "Base09",
+    "unfocused_border": "Base03",
+    "unfocused_locked_border": "Base08",
+    "bar_accent": "Base0D"
+  },
+  "manage_rules": [
+    {
+      "kind": "Exe",
+      "id": "claude.exe",
+      "matching_strategy": "Equals"
     },
-    "mouse_follows_focus": true,
-    "cross_monitor_move_behaviour": "Insert",
-    "transparency": true,
-    "transparency_alpha": 220,
-    "default_workspace_padding": 6,
-    "default_container_padding": 6,
-    "global_work_area_offset": {
-        "left": 0,
-        "top": 0,
-        "right": 0,
-        "bottom": 0
+    {
+      "kind": "Exe",
+      "id": "mscopilot.exe",
+      "matching_strategy": "Equals"
     },
-    "border": true,
-    "border_width": 6,
-    "border_offset": -1,
-    "theme": {
-        "palette": "Base16",
-        "name": "TokyoNightDark",
-        "single_border": "Base0E",
-        "stack_border": "Base0B",
-        "monocle_border": "Base0D",
-        "floating_border": "Base09",
-        "unfocused_border": "Base03",
-        "unfocused_locked_border": "Base08",
-        "bar_accent": "Base0D"
+    {
+      "kind": "Exe",
+      "id": "deadbeef.exe",
+      "matching_strategy": "Equals"
     },
-    "manage_rules": [
+    {
+      "kind": "Class",
+      "id": "TaskManagerWindow",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "remove_titlebar_applications": [
+    {
+      "kind": "Exe",
+      "id": "neovide.exe",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "monitors": [
+    {
+      "workspaces": [
         {
-            "kind": "Exe",
-            "id": "claude.exe",
-            "matching_strategy": "Equals"
+          "name": "1  ",
+          "layout": "BSP"
         },
         {
-            "kind": "Exe",
-            "id": "mscopilot.exe",
-            "matching_strategy": "Equals"
+          "name": "2  ",
+          "layout": "Scrolling",
+          "layout_options": {
+            "scrolling": {
+              "columns": 2
+            }
+          }
         },
         {
-            "kind": "Exe",
-            "id": "deadbeef.exe",
-            "matching_strategy": "Equals"
+          "name": "3  ",
+          "layout": "BSP"
         },
         {
-            "kind": "Class",
-            "id": "TaskManagerWindow",
-            "matching_strategy": "Equals"
-        }
-    ],
-    "remove_titlebar_applications": [
+          "name": "4  ",
+          "layout": "BSP"
+        },
         {
-            "kind": "Exe",
-            "id": "neovide.exe",
-            "matching_strategy": "Equals"
-        }
-    ],
-    "monitors": [
+          "name": "5  ",
+          "layout": "Grid"
+        },
         {
-            "workspaces": [
-                {
-                    "name": "1  ",
-                    "layout": "Scrolling",
-                    "layout_options": {
-                        "scrolling": {
-                            "columns": 2
-                        }
-                    }
-                },
-                {
-                    "name": "2  ",
-                    "layout": "BSP"
-                },
-                {
-                    "name": "3  ",
-                    "layout": "BSP"
-                },
-                {
-                    "name": "4  ",
-                    "layout": "BSP"
-                },
-                {
-                    "name": "5  ",
-                    "layout": "Grid"
-                },
-                {
-                    "name": "6 󰂽 ",
-                    "layout": "BSP"
-                },
-                {
-                    "name": "7  ",
-                    "layout": "BSP"
-                },
-                {
-                    "name": "8  ",
-                    "layout": "BSP"
-                },
-                {
-                    "name": "9  ",
-                    "layout": "BSP"
-                }
-            ]
+          "name": "6 󰂽 ",
+          "layout": "BSP"
+        },
+        {
+          "name": "7  ",
+          "layout": "BSP"
+        },
+        {
+          "name": "8  ",
+          "layout": "BSP"
+        },
+        {
+          "name": "9  ",
+          "layout": "BSP"
         }
-    ]
+      ]
+    }
+  ]
 }
