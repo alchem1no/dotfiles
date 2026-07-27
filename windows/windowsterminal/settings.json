@@ -16,6 +16,10 @@
             "id": "User.paste"
         },
         {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -27,10 +31,6 @@
         {
             "command": "toggleFocusMode",
             "id": "User.toggleFocusMode"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
         },
         {
             "command": 
@@ -92,24 +92,24 @@
     "keybindings": 
     [
         {
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
             "id": "User.OpenProfile.FarManager",
             "keys": "ctrl+alt+f"
         },
         {
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.OpenProfile.PowerShell",
+            "keys": "ctrl+alt+p"
         },
         {
             "id": "User.find",
             "keys": "ctrl+shift+f"
         },
         {
-            "id": "User.OpenProfile.PowerShell",
-            "keys": "ctrl+alt+p"
+            "id": "User.paste",
+            "keys": "ctrl+v"
         },
         {
             "id": "User.splitPane.A6751878",
@@ -145,11 +145,11 @@
             "elevate": false,
             "font": 
             {
-                "face": "CaskaydiaCove Nerd Font Mono",
+                "face": "FiraCode Nerd Font Mono",
                 "size": 12
             },
             "intenseTextStyle": "bright",
-            "opacity": 94,
+            "opacity": 95,
             "padding": "8",
             "useAcrylic": false
         },
@@ -177,7 +177,7 @@
                 "elevate": false,
                 "guid": "{390b1d9c-547b-45e2-9241-934da7927806}",
                 "hidden": false,
-                "icon": "C:\\Users\\Glyder\\scoop\\apps\\neovim\\current\\bin\\neovim.png",
+                "icon": "C:\\Users\\Glyder\\scoop\\apps\\neovim\\neovim.png",
                 "name": "Neovim",
                 "startingDirectory": "%USERPROFILE%",
                 "tabTitle": "Neovim"
@@ -191,32 +191,11 @@
                 "tabTitle": "VS Dev"
             },
             {
-                "elevate": false,
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "icon": "C:\\Users\\Glyder\\Pictures\\Icons\\Logo-ubuntu_cof-orange-hex_plain.png",
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "tabTitle": "Ubuntu"
-            },
-            {
                 "commandline": "cmd",
                 "elevate": true,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "name": "CMD",
                 "tabTitle": "CMD"
-            },
-            {
-                "colorScheme": "Campbell",
-                "commandline": "C:\\Windows\\system32\\wsl.exe -d Ubuntu",
-                "guid": "{9b78122a-b4cd-43a6-9bbe-5484fc9815a4}",
-                "hidden": true,
-                "icon": "C:\\Users\\Glyder\\Pictures\\Icons\\Logo-ubuntu_cof-orange-hex_plain.png",
-                "name": "Ubuntu Black Background",
-                "opacity": 100,
-                "startingDirectory": "~",
-                "tabTitle": "Ubuntu",
-                "useAcrylic": false
             },
             {
                 "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
@@ -235,12 +214,6 @@
                 "name": "Windows PowerShell",
                 "opacity": 97,
                 "useAcrylic": false
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
             },
             {
                 "guid": "{5533ac58-2993-59dd-991d-8fde2649ef6e}",
@@ -267,10 +240,11 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "guid": "{bc2da056-dd06-5879-b969-1dfcefc8d2c7}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "openSUSE-Tumbleweed",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
