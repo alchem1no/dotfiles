@@ -67,9 +67,10 @@ Managing some JSON configs is done through JSON5 configs with translation to reg
 - [ ] Fix Thunar freezes
 - [ ] Fix menu items in Waybar power menu not working correctly
 - YASB:
-    - [ ] Fix brightness icon appearing chopped
-    - [ ] Unify paddings
+    - [x] Fix brightness icon appearing chopped
+    - [x] Unify paddings
     - [ ] Fix workspaces padding being too big
+    - [ ] Fix Cava widget not working properly
 - [ ] Add and/or configure:
     - [x] Zsh
     - [x] PowerShell
