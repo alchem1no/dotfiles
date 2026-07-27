@@ -191,6 +191,7 @@
 .widget .icon {
     font-size: 16px;
     font-weight: 400;
+    padding-right: 4px;
     color: var(--yasb-icon-fg);
     font-family: var(--icons-font);
 }
@@ -208,7 +209,6 @@
 /* Universal styles */
 .systray,
 .cpu-widget,
-
 .language-widget,
 .brightness-widget,
 .volume-widget,
@@ -218,13 +218,13 @@
     margin-left: 6px;
 }
 .systray,
-.quick-launch-widget,
-
+.whkd-widget,
 .language-widget,
 .brightness-widget,
 .microphone-widget,
 .battery-widget,
-.github-widget
+.github-widget,
+.media-widget
 {
     margin-right: 6px;
 }
@@ -240,9 +240,6 @@
 {
     color: var(--tn-cyan);
     border-color: var(--tn-cyan);
-}
-.home-widget {
-    margin-right: 4px;
 }
 .home-widget .icon {
     padding-right: 2px;
@@ -272,9 +269,6 @@
 {
     color:        var(--tn-purple);
     border-color: var(--tn-purple);
-}
-.quick-launch-widget {
-    margin-left: 4px;
 }
 .quick-launch-widget .icon {
     padding-right: 3px;
@@ -453,18 +447,15 @@
     background: rgb(19, 90, 204);
 }
 
-/* Komorebi */
-
-/* Control */
-.komorebi-control-widget,
-.komorebi-control-widget .icon
+/* Wallpapers */
+.wallpapers-widget,
+.wallpapers-widget .icon
 {
-    color:        var(--tn-blue);
-    border-color: var(--tn-blue);
+    color:        var(--tn-orange);
+    border-color: var(--tn-orange);
 }
-.komorebi-control-widget .icon {
-    padding-right: 4px;
-}
+
+/* Komorebi */
 
 /* Workspaces */
 .komorebi-workspaces,
@@ -503,6 +494,41 @@
 .komorebi-workspaces .ws-btn.active:hover
 {
     background-color: var(--tn-bg-highlight);
+}
+
+/* Control */
+.komorebi-control-widget,
+.komorebi-control-widget .icon
+{
+    color:        var(--tn-blue);
+    border-color: var(--tn-blue);
+}
+
+/* Layout */
+.komorebi-active-layout,
+.komorebi-active-layout .icon,
+.komorebi-active-layout .label
+{
+    color:        var(--tn-green);
+    border-color: var(--tn-green);
+}
+.komorebi-active-layout .icon {
+    letter-spacing: 2px;
+}
+.komorebi-active-layout .label {
+    padding-left: 2px;
+}
+
+/* WHKD */
+.whkd-widget,
+.whkd-widget .icon,
+.whkd-widget .label
+{
+    color:        var(--tn-yellow);
+    border-color: var(--tn-yellow);
+}
+.whkd-widget .icon {
+    padding-right: 5px;
 }
 
 /* CPU */
@@ -598,7 +624,6 @@
 }
 .gpu-widget .icon {
     font-size: 16px;
-    padding-right: 4px;
 }
 .gpu-widget .label {
     padding-right: 8px;
@@ -697,7 +722,6 @@
 }
 .disk-widget .icon {
     padding-left:  2px;
-    padding-right: 4px;
 }
 .disk-widget .label {
     padding-right: 6px;
@@ -1079,20 +1103,20 @@
 
 /* Brightness */
 .brightness-widget .icon {
-    padding-right: 4px;
+    letter-spacing: 2px;
 }
 .brightness-widget .label {
     padding-right: 4px;
 }
 
 /* Volume */
-.volume-widget,
-.volume-widget .icon,
-.volume-widget .label
-{
-    color:        var(--tn-yellow);
-    border-color: var(--tn-yellow);
-}
+/* .volume-widget, */
+/* .volume-widget .icon, */
+/* .volume-widget .label */
+/* { */
+/*     color:        var(--tn-yellow); */
+/*     border-color: var(--tn-yellow); */
+/* } */
 .volume-widget .icon {
     font: 16px var(--icons-font-native);
 }
@@ -1146,13 +1170,13 @@
 }
 
 /* Microphone */
-.microphone-widget,
-.microphone-widget .icon,
-.microphone-widget .label
-{
-    color:        var(--tn-yellow);
-    border-color: var(--tn-yellow);
-}
+/* .microphone-widget, */
+/* .microphone-widget .icon, */
+/* .microphone-widget .label */
+/* { */
+/*     color:        var(--tn-yellow); */
+/*     border-color: var(--tn-yellow); */
+/* } */
 .microphone-widget .icon {
     font-size: 16px;
 }
@@ -1190,9 +1214,12 @@
     color:        var(--tn-cyan);
     border-color: var(--tn-cyan);
 }
+.wifi-widget .icon {
+    letter-spacing: 2px;
+}
 .wifi-widget .label {
     padding-left:  1px;
-    padding-right: 3px;
+    padding-right: 4px;
 }
 
 /* Bluetooth */
@@ -1248,6 +1275,57 @@
     padding-right: 1px;
 }
 
+/* Power Plan */
+/*
+ * Note:
+ * YASB takes power plan names, replaces spaces with hyphens
+ * and converts them to lowercase. This means you can define
+ * properties for effectively any power plan!
+ *
+ * YASB's Python code for reference:
+ *  if plan.name in self.config.class_map:
+ *      self._plan_class_name = self.config.class_map[plan.name]
+ *  elif plan_guid_str in self.config.class_map:
+ *      self._plan_class_name = self.config.class_map[plan_guid_str]
+ *  else:
+ *      self._plan_class_name = plan.name.replace(" ", "-").lower()
+*/
+/* Fix icon padding */
+.power-plan-widget .icon {
+    padding-right: 6px;
+}
+.power-plan-widget .icon.balanced {
+    padding-right: 6px;
+    qproperty-text: "";
+}
+.power-plan-widget .icon.power-saver {
+    qproperty-text: "";
+}
+.power-plan-widget .icon.ultimate-performance,
+.power-plan-widget .icon.high-performance
+{
+    qproperty-text: "";
+}
+
+/* DND */
+.dnd-widget,
+.dnd-widget .icon,
+.dnd-widget .label
+{
+    color:        var(--tn-purple);
+    border-color: var(--tn-purple);
+}
+.dnd-widget .icon {
+    padding-right:  2px;
+    letter-spacing: 2px;
+}
+/* This option is broken and doesn't work as intended */
+/*
+.dnd-widget .widget-container .label.status-alarms {
+    padding-right: 5px;
+}
+*/
+
 /* Notifications */
 .notification-widget,
 .notification-widget .icon,
@@ -1257,7 +1335,8 @@
     border-color: var(--tn-green1);
 }
 .notification-widget .icon {
-    padding-right: 2px;
+    padding-right:  2px;
+    letter-spacing: 2px;
 }
 
 /* Power Menu */
@@ -1363,7 +1442,6 @@
 
 /* Active Windows Title */
 .active-window-widget .icon {
-    padding-right: 4px;
     padding-bottom: 0;
 }
 
@@ -1371,8 +1449,6 @@
 
 /* Media */
 .media-widget {
-    padding: 0;
-    margin: 0;
     min-width: 300px;
 }
 .media-widget .label {
@@ -1520,4 +1596,13 @@
 }
 .media-menu .app-volume-container .unmute-button {
     color: #a0a0a0;
+}
+
+/* Claude Usage */
+.claude-usage,
+.claude-usage .icon,
+.claude-usage .label
+{
+    color:        var(--tn-orange);
+    border-color: var(--tn-orange);
 }
