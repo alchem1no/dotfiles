@@ -4,7 +4,7 @@
 # alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
 alt + o                 : Stop-Process -Name whkd -Force -ErrorAction SilentlyContinue; Start-Process whkd -WindowStyle hidden; New-BurntToastNotification -Text "WHKD", "Reloaded successfully"
 alt + shift + o         : komorebic reload-configuration; New-BurntToastNotification -Text "Komorebi", "Reloaded successfully"
-ctrl + alt + o          : yasbc reload; New-BurntToastNotification -Text "YASB", "Reloaded successfully"
+alt + r                 : yasbc reload; New-BurntToastNotification -Text "YASB", "Reloaded successfully"
 # ctrl + alt + shift + o  : Stop-Process -Name kanata -Force -ErrorAction SilentlyContinue; kanata_gui_winIOv2_x64.exe -c caps-lock-to-LCtrl-Esc.kbd; New-BurntToastNotification -Text "Kanata", "Reloaded successfully"
 
 alt + i                 : komorebic toggle-shortcuts
@@ -24,6 +24,7 @@ alt + return            : wt              # Terminal
 alt + c                 : neovide         # Editor
 alt + w                 : brave           # Browser 1st
 alt + shift + w         : firefox         # Browser 2nd
+alt + x                 : thunderbird     # Mail client
 alt + m                 : telegram        # Messenger
 alt + a                 : start claude:// # AI client
 
@@ -72,15 +73,15 @@ alt + x                 : komorebic flip-layout horizontal
 alt + y                 : komorebic flip-layout vertical
 
 # Change
-ctrl + alt + 1          : komorebic change-layout bsp
-ctrl + alt + 2          : komorebic change-layout columns
-ctrl + alt + 3          : komorebic change-layout rows
-ctrl + alt + 4          : komorebic change-layout vertical-stack
-ctrl + alt + 5          : komorebic change-layout horizontal-stack
-ctrl + alt + 6          : komorebic change-layout ultrawide-vertical-stack
-ctrl + alt + 7          : komorebic change-layout grid
-ctrl + alt + 8          : komorebic change-layout right-main-vertical-stack
-ctrl + alt + 9          : komorebic change-layout scrolling
+# ctrl + alt + 1          : komorebic change-layout bsp
+# ctrl + alt + 2          : komorebic change-layout columns
+# ctrl + alt + 3          : komorebic change-layout rows
+# ctrl + alt + 4          : komorebic change-layout vertical-stack
+# ctrl + alt + 5          : komorebic change-layout horizontal-stack
+# ctrl + alt + 6          : komorebic change-layout ultrawide-vertical-stack
+# ctrl + alt + 7          : komorebic change-layout grid
+# ctrl + alt + 8          : komorebic change-layout right-main-vertical-stack
+# ctrl + alt + 9          : komorebic change-layout scrolling
 
 # Workspaces
 alt + 1                 : komorebic focus-workspace 0
