@@ -1,3 +1,5 @@
+local CONST = require("constants")
+
 local g = vim.g
 local o = vim.o
 local notify = vim.notify
@@ -7,18 +9,9 @@ local INFO = vim.log.levels.INFO
 
 local M = {}
 
--- Constants
-local DEFAULT_FONT_SIZE = 14
-local MIN_FONT_SIZE = 1
-local MAX_FONT_SIZE = 24
-local DEFAULT_OPACITY = 0.9
-local MIN_OPACITY = 0.4
-local MAX_OPACITY = 1.0
-local FONT = "CaskaydiaCove Nerd Font"
-
 -- Configuration
-M.font_size = DEFAULT_FONT_SIZE
-M.opacity = DEFAULT_OPACITY
+M.font_size = CONST.DEFAULT_FONT_SIZE
+M.opacity = CONST.DEFAULT_OPACITY
 g.neovide_opacity = M.opacity
 
 -- Helper functions
@@ -27,7 +20,7 @@ local function clamp(value, min, max)
 end
 
 local function apply_font(size)
-	o.guifont = ("%s:h%d"):format(FONT, size)
+	o.guifont = ("%s:h%d"):format(CONST.FONT, size)
 end
 
 -- Shows notification properly
@@ -50,7 +43,7 @@ function M.change_font_size(delta, should_notify)
 
 	delta = delta or 0
 
-	M.font_size = clamp(M.font_size + delta, MIN_FONT_SIZE, MAX_FONT_SIZE)
+	M.font_size = clamp(M.font_size + delta, CONST.MIN_FONT_SIZE, CONST.MAX_FONT_SIZE)
     apply_font(M.font_size)
 
 	if should_notify then
@@ -64,7 +57,7 @@ function M.change_font_size(delta, should_notify)
 end
 
 function M.reset_font_size(should_notify)
-    M.font_size = DEFAULT_FONT_SIZE
+    M.font_size = CONST.DEFAULT_FONT_SIZE
     apply_font(M.font_size)
 
 	if should_notify then
@@ -78,7 +71,7 @@ function M.reset_font_size(should_notify)
 end
 
 function M.change_opacity(delta)
-	M.opacity = clamp(M.opacity + delta, MIN_OPACITY, MAX_OPACITY)
+	M.opacity = clamp(M.opacity + delta, CONST.MIN_OPACITY, CONST.MAX_OPACITY)
 	g.neovide_opacity = M.opacity
 
     neovide_notify(
@@ -88,7 +81,7 @@ function M.change_opacity(delta)
 end
 
 function M.reset_opacity(should_notify)
-    M.opacity = DEFAULT_OPACITY
+    M.opacity = CONST.DEFAULT_OPACITY
     g.neovide_opacity = M.opacity
 
     if should_notify then
