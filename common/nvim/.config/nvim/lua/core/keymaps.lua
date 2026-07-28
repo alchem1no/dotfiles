@@ -1,12 +1,7 @@
-local CONST = require("constants")
-
 local map = vim.keymap.set
 local cmd = vim.cmd
 local g = vim.g
 local notify = vim.notify
-local apply_tokyonight =
-    require("utils.apply_tokyonight").apply_tokyonight
--- local myos = require("core.myos")
 
 --------------------------------------------------
 -- Basic
@@ -96,7 +91,7 @@ map("n", "<F12>", "<cmd>ToggleTerm<CR>", {
 -- Set <leader> key
 --------------------------------------------------
 
-g.mapleader = " "       -- Space key
+g.mapleader      = " "  -- Space key
 g.maplocalleader = "\\" -- Backslash key
 
 --------------------------------------------------
@@ -113,13 +108,13 @@ map("n", "<localleader>r", function()
 
     if extension == "lua" then
         -- Source the file silently
-        vim.cmd("source %")
-        vim.notify("File sourced", vim.log.levels.INFO, {
+        cmd("source %")
+        notify("File sourced", vim.log.levels.INFO, {
             title = "Neovim"
         })
     else
         -- Show notification for non-lua files
-        vim.notify("Cannot source: Not a Lua file",
+        notify("Cannot source: Not a Lua file",
             vim.log.levels.WARN, {
                 title = "Neovim"
             }
@@ -138,13 +133,13 @@ map("n", "<localleader>q", "<cmd>q<CR>", {
 --------------------------------------------------
 
 --------------------------------------------------
--- Toggle stuff
+-- Toggle
 --------------------------------------------------
 
 map("n", "<leader>tf", function()
-	vim.g.autoformat = not vim.g.autoformat
+	g.autoformat = not g.autoformat
 
-    vim.notify(
+    notify(
         "Autoformat: " .. (vim.g.autoformat and "ON" or "OFF"),
         vim.log.levels.INFO,
         { title = "Conform" }
@@ -289,40 +284,12 @@ termmap(
 )
 
 --------------------------------------------------
--- tokyonight.nvim
---------------------------------------------------
-
-map ("n", "<leader>utd", function()
-    apply_tokyonight("day", CONST.HEX_TRANSPARENCY)
-end, {
-    desc = "Tokyo Night Day"
-})
-
-map ("n", "<leader>utn", function()
-    apply_tokyonight("night", CONST.HEX_TRANSPARENCY)
-end, {
-    desc = "Tokyo Night Night"
-})
-
-map ("n", "<leader>utm", function()
-    apply_tokyonight("moon", CONST.HEX_TRANSPARENCY)
-end, {
-    desc = "Tokyo Night Moon"
-})
-
-map ("n", "<leader>uts", function()
-    apply_tokyonight("storm", CONST.HEX_TRANSPARENCY)
-end, {
-    desc = "Tokyo Night Storm"
-})
-
---------------------------------------------------
 -- Switching between windows (panels in Neovim)
 -- via Alt + arrows and Alt + h/j/k/l
 --------------------------------------------------
 
 for _, key in ipairs({ "Left", "h" }) do
-        map ("n", "<C-" .. key .. ">", function()
+        map("n", "<C-" .. key .. ">", function()
         cmd("wincmd h")
     end, {
         desc = "Move focus to left window"
@@ -330,7 +297,7 @@ for _, key in ipairs({ "Left", "h" }) do
 end
 
 for _, key in ipairs({ "Right", "l" }) do
-        map ("n", "<C-" .. key .. ">", function()
+        map("n", "<C-" .. key .. ">", function()
         cmd("wincmd l")
     end, {
         desc = "Move focus to right window"
@@ -338,7 +305,7 @@ for _, key in ipairs({ "Right", "l" }) do
 end
 
 for _, key in ipairs({ "Down", "j" }) do
-        map ("n", "<C-" .. key .. ">", function()
+        map("n", "<C-" .. key .. ">", function()
         cmd("wincmd j")
     end, {
         desc = "Move focus to lower window"
@@ -346,7 +313,7 @@ for _, key in ipairs({ "Down", "j" }) do
 end
 
 for _, key in ipairs({ "Up", "k" }) do
-        map ("n", "<C-" .. key .. ">", function()
+        map("n", "<C-" .. key .. ">", function()
         cmd("wincmd k")
     end, {
         desc = "Move focus to upper window"

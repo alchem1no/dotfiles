@@ -1,9 +1,8 @@
 local CONST = require("constants")
-local M = {}
 
 -- hex_transparency is a string of 2 hex symbols, representing
 -- alpha channel
-function M.apply_tokyonight(theme_style, hex_transparency)
+function apply_tokyonight(theme_style, hex_transparency)
     local dark = theme_style ~= "day"
 
     hex_transparency = hex_transparency or CONST.HEX_TRANSPARENCY
@@ -51,4 +50,4 @@ function M.apply_tokyonight(theme_style, hex_transparency)
     end
 end
 
-return M
+return apply_tokyonight

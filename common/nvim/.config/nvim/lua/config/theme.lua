@@ -1,7 +1,7 @@
 local CONST = require("constants")
 
 local apply_tokyonight =
-    require("utils.apply_tokyonight").apply_tokyonight
+    require("utils.apply_tokyonight")
 local is_dark_mode =
     require("utils.is_dark_mode").is_dark_mode
 
