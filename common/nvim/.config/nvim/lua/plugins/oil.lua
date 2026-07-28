@@ -17,6 +17,8 @@ return {
 
 		config = function()
 			require("oil").setup({
+                default_file_explorer = true,
+
                 keymaps = {
                     ["g?"] = "actions.show_help",
 
