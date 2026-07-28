@@ -7,21 +7,6 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
         },
-
-        opts = {
-            adapters = {
-                acp = {
-                    claude_code = function()
-                        return require("codecompanion.adapters").extend("claude_code", {})
-                    end,
-                },
-            },
-            strategies = {
-                chat = {
-                    adapter = "claude_code",
-                },
-            },
-        },
         
         cmd = {
             "CodeCompanion",
@@ -29,7 +14,6 @@ return {
             "CodeCompanionActions",
             "CodeCompanionCmd"
         },
-
         keys = {
             {
                 "<leader>aa",
@@ -60,6 +44,21 @@ return {
                 ":CodeCompanionCmd ",
                 mode = "n",
                 desc = "Generate command (CodeCompanion)",
+            },
+        },
+
+        opts = {
+            adapters = {
+                acp = {
+                    claude_code = function()
+                        return require("codecompanion.adapters").extend("claude_code", {})
+                    end,
+                },
+            },
+            strategies = {
+                chat = {
+                    adapter = "claude_code",
+                },
             },
         },
     }

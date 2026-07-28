@@ -22,6 +22,7 @@ return {
                 { "<leader>s", group = "Split" },
                 { "<leader>t", group = "Toggle" },
                 { "<leader>u", group = "UI" },
+                { "<leader>ut", group = "Set Tokyo Night theme" },
                 { "<leader>x", group = "Trouble" },
             })
         end,

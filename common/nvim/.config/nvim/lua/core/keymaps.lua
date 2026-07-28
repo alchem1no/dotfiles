@@ -24,17 +24,6 @@ map ("n", "<C-\\>", "<cmd>terminal<CR>", {
 })
 
 --------------------------------------------------
--- Open Oil
---------------------------------------------------
-
-map("n", "-", "<cmd>Oil<CR>", {
-    desc = "Oil: Open current directory"
-})
-map("n", "~", "<cmd>Oil ~<CR>", {
-    desc = "Oil: Open home directory"
-})
-
---------------------------------------------------
 -- F keys
 --------------------------------------------------
 
@@ -50,10 +39,6 @@ map("n", "<F3>", "*", {
     desc = "Search Word",
 })
 
-map("n", "<F4>", "<cmd>Trouble diagnostics toggle<CR>", {
-    desc = "Diagnostics",
-})
-
 map("n", "<F8>", function()
     g.autoformat = not g.autoformat
 
@@ -65,27 +50,14 @@ end, {
     desc = "Toggle Autoformat",
 })
 
--- Set up Zen mode via Snacks
--- map("n", "<F9>", , {
---     desc = "",
--- })
-
--- map("n", "<F10>", "<cmd>Neotree toggle<CR>", {
---     desc = "Toggle Neotree",
--- })
-
-map("n", "<F12>", "<cmd>ToggleTerm<CR>", {
-    desc = "ToggleTerm",
+map("n", "<F9>", function()
+    cmd("nohlsearch")
+    cmd("silent! cclose")
+    cmd("silent! lclose")
+    cmd("silent! TroubleClose")
+end, {
+    desc = "Cleanup UI",
 })
-
--- map("n", "<F12>", function()
---     cmd("nohlsearch")
---     cmd("silent! cclose")
---     cmd("silent! lclose")
---     cmd("silent! TroubleClose")
--- end, {
---     desc = "Cleanup UI",
--- })
 
 --------------------------------------------------
 -- Set <leader> key
@@ -148,19 +120,6 @@ end, {
 	desc = "Toggle AutoFormat",
 })
 
-map("n", "<leader>tm", function()
-    local ok, minimap = pcall(require, "mini.map")
-    if ok then
-        require("mini.map").toggle()
-    end
-end, {
-	desc = "Toggle MiniMap",
-})
-
-map ("n", "<leader>tb", "<cmd>Neotree toggle<CR>", {
-    desc = "Toggle Neo-tree"
-})
-
 --------------------------------------------------
 -- Split
 --------------------------------------------------
@@ -184,104 +143,6 @@ map ("n", "<leader>sv", function()
 map ("n", "<leader>ux", "<cmd>close<CR>", {
     desc = "Close"
 })
-
-------------------
---- ToggleTerm ---
-------------------
-
-local pwsh = "pwsh"
-    .. " -NoLogo"
-
--- Helper functions
--- Get table of terminals
-local terms = {}
-local function get_terms()
-    if not terms.default then
-        local Terminal =
-            require("toggleterm.terminal").Terminal
-        terms.default  = Terminal:new({
-            hidden = true
-        })
-        terms.zsh      = Terminal:new({
-            cmd = "zsh",  hidden = true
-        })
-        terms.pwsh     = Terminal:new({
-            cmd = pwsh,   hidden = true
-        })
-        terms.bash     = Terminal:new({
-            cmd = "bash", hidden = true
-        })
-        terms.cmd      = Terminal:new({
-            cmd = "cmd",  hidden = true
-        })
-    end
-    return terms
-end
-
--- Map a key only if OS has specified shell executable
-local function termmap(keybind, shell, term_key, desc)
-    if shell == nil or vim.fn.executable(shell) == 1 then
-        map("n", keybind, function()
-            get_terms()[term_key]:toggle()
-        end, {
-            desc = desc
-        })
-    end
-end
-
--- Default Shell keymap
-termmap(
-    "<leader>ttt", nil, "default",
-    "ToggleTerm"
-)
-
--- Specific shell keymaps
-termmap(
-    "<leader>ttz", "zsh", "zsh",
-    "ToggleTerm Zsh"
-)
-
-termmap(
-    "<leader>ttp", "pwsh", "pwsh",
-    "ToggleTerm PowerShell"
-)
-
-termmap(
-    "<leader>ttb", "bash", "bash",
-    "ToggleTerm Bash"
-)
-
-termmap(
-    "<leader>ttc", "cmd", "cmd",
-    "ToggleTerm CMD (Win)"
-)
-
--- Function key Shell keymap
-termmap(
-    "<F6>", nil, "default",
-    "ToggleTerm"
-)
-
--- Specific shell keymaps
-termmap(
-    "<C-F6>", "zsh", "zsh",
-    "ToggleTerm Zsh"
-)
-
-termmap(
-    "<S-F6>", "pwsh", "pwsh",
-    "ToggleTerm PowerShell"
-)
-
-termmap(
-    "<C-S-F6>", "bash", "bash",
-    "ToggleTerm Bash"
-)
-
-termmap(
-    "<C-A-S-F6>", "cmd", "cmd",
-    "ToggleTerm CMD (Win)"
-)
 
 --------------------------------------------------
 -- Switching between windows (panels in Neovim)
@@ -319,31 +180,3 @@ for _, key in ipairs({ "Up", "k" }) do
         desc = "Move focus to upper window"
 })
 end
-
----------------
---- Lazygit ---
----------------
-
-map("n", "<leader>l", "<cmd>LazyGitCurrentFile<CR>", {
-    desc = "LazyGit"
-})
-
---------------------------------------------------
--- CodeCompanion
---------------------------------------------------
-
-map("n", "<leader>c", "<cmd>CodeCompanionChat<CR>", {
-    desc = "Open Code Companion Chat"
-})
-
---------------------------------------------------
--- Bufferline
---------------------------------------------------
-
-map('n', '<leader>bd', '<cmd>Bdelete<CR>', {
-    desc = 'Close current buffer'
-})
-
-map('n', '<leader>bD', '<cmd>Bdelete!<CR>', {
-    desc = 'Force close current buffer'
-})

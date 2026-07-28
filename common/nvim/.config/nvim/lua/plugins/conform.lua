@@ -1,17 +1,20 @@
-vim.g.autoformat = false
+vim.g.autoformat = true
 
 return {
 	{
 		"stevearc/conform.nvim",
-        
-        keys = {
-            vim.keymap.set("n", "<F7>", function()
-                require("conform").format({ async = true })
-            end, {
-                desc = "Format File",
-            }),
-        },
 
+        keys = {
+            {
+                "<F7>",
+                function()
+                    require("conform").format({ async = true })
+                end,
+                mode = "n",
+                desc = "Format File",
+            },
+        },
+        
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },

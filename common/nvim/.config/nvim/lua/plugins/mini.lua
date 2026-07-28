@@ -1,8 +1,18 @@
 return {
     {
         "echasnovski/mini.nvim",
-
         version = false,
+
+        keys = {
+            {
+                "<leader>tm",
+                function()
+                    require("mini.map").toggle()
+                end,
+                mode = "n",
+                desc = "Toggle MiniMap",
+            },
+        },
 
         config = function()
             local map = require("mini.map")

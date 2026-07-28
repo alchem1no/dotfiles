@@ -1,11 +1,13 @@
 return {
     {
         "jellydn/quick-code-runner.nvim",
+        enabled = false,
         dependencies = { "MunifTanjim/nui.nvim" },
-        opts = {
-            debug = true,
+
+        cmd = {
+            "QuickCodeRunner",
+            "QuickCodePad",
         },
-        cmd = { "QuickCodeRunner", "QuickCodePad" },
         keys = {
             {
               "<leader>cr",
@@ -18,6 +20,10 @@ return {
               ":QuickCodePad<CR>",
               desc = "Quick Code Pad",
             },
+        },
+
+        opts = {
+            debug = false,
         },
     }
 }

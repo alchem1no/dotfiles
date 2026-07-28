@@ -1,14 +1,60 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
 
-        config = function()
-            local builtin = require("telescope.builtin")
+        keys = {
+            {
+                "<leader>ff",
+                function()
+                    require("telescope.builtin").find_files()
+                end,
+                mode = "n",
+                desc = "Find Files",
+            },
+            {
+                "<leader>fg",
+                function()
+                    require("telescope.builtin").live_grep()
+                end,
+                mode = "n",
+                desc = "Live Grep",
+            },
+            {
+                "<leader>fb",
+                function()
+                    require("telescope.builtin").buffers()
+                end,
+                mode = "n",
+                desc = "Buffers",
+            },
+            {
+                "<leader>fh",
+                function()
+                    require("telescope.builtin").help_tags()
+                end,
+                mode = "n",
+                desc = "Help Tags",
+            },
+            {
+                "<leader>fn",
+                function()
+                    local query = vim.fn.input("Grep config > ")
+                    if query == "" then return end
 
+                    require("telescope.builtin").grep_string({
+                        search = query,
+                        cwd = vim.fn.stdpath("config"),
+                    })
+                end,
+                mode = "n",
+                desc = "Grep Neovim config",
+            },
+        },
+
+        config = function()
             require("telescope").setup({
                 defaults = {
                     file_ignore_patterns = {
@@ -27,36 +73,6 @@ return {
                     },
                 },
             })
-                
-            vim.keymap.set("n", "<leader>ff",
-            builtin.find_files, {
-                desc = "Find Files",
-            })
-            vim.keymap.set("n", "<leader>fg",
-            builtin.live_grep, {
-                desc = "Live Grep",
-            })
-            vim.keymap.set("n", "<leader>fb",
-            builtin.buffers, {
-                desc = "Buffers",
-            })
-            vim.keymap.set("n", "<leader>fh",
-            builtin.help_tags, {
-                desc = "Help Tags",
-            })
-            vim.keymap.set("n", "<leader>fn", function()
-                local query = vim.fn.input("Grep config > ")
-                if query == "" then
-                    return
-                end
-
-                builtin.grep_string({
-                    search = query,
-                    cwd = vim.fn.stdpath("config"),
-                })
-            end, {
-                desc = "Grep Neovim config"
-            })
         end,
-    },
+    }
 }

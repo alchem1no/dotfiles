@@ -2,6 +2,12 @@ return {
     {
         "CRAG666/code_runner.nvim",
 
+        keys = {
+            { '<leader>rr', '<cmd>RunCode<CR>',  desc = 'Run Code' },
+            { '<leader>rf', '<cmd>RunFile<CR>',  desc = 'Run File' },
+            { '<leader>rc', '<cmd>RunClose<CR>', desc = 'Close Runner Window' },
+        },
+
         config = function()
             require('code_runner').setup({
                 filetype = {
@@ -14,10 +20,5 @@ return {
                 },
             })
         end,
-        keys = {
-            { '<leader>rr', '<cmd>RunCode<CR>',  desc = 'Run Code' },
-            { '<leader>rf', '<cmd>RunFile<CR>',  desc = 'Run File' },
-            { '<leader>rc', '<cmd>RunClose<CR>', desc = 'Close Runner Window' },
-        },
     }
 }

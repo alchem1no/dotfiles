@@ -7,13 +7,27 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
 
+        keys = {
+            {
+                "<leader>bd",
+                "<cmd>Bdelete<cr>",
+                mode = "n",
+                desc = "Close current buffer"
+            },
+            {
+                "<leader>bD",
+                "<cmd>Bdelete!<cr>",
+                mode = "n",
+                desc = "Force close current buffer"
+            },
+        },
+
         config = function()
             require("bufferline").setup({
                 options = {
                     mode = "buffers",
                     themable = true,
                     indicator = {
-                        -- icon = "➤",
                         style = 'underline'
                     },
                     

@@ -4,6 +4,16 @@ return {
         priority = 1000,
         lazy = false,
 
+        -- Template for a keybind
+        -- keys = {
+        --     {
+        --         "<F9>",
+        --         "",
+        --         mode = "n",
+        --         desc = "Zen mode",
+        --     },
+        -- },
+
         opts = {
             scroll = { enabled = true },
             statuscolumn = { enabled = true },

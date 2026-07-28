@@ -2,6 +2,19 @@ return {
 	{
 		"stevearc/oil.nvim",
 
+        keys = {
+            {
+                "-", "<cmd>Oil<cr>",
+                mode = "n",
+                desc = "Open current directory (Oil)",
+            },
+            {
+                "~", "<cmd>Oil ~<cr>",
+                mode = "n",
+                desc = "Open home directory (Oil)",
+            },
+        },
+
 		config = function()
 			require("oil").setup({
                 keymaps = {
@@ -25,7 +38,7 @@ return {
                     ["g."] = "actions.toggle_hidden",
 
                     ["<F5>"] = "actions.refresh"
-                }
+                },
             })
 		end,
 	},
