@@ -5,7 +5,7 @@ local g   = vim.g
 local opt = vim.opt
 local v   = vim.v
 
-local deps = { "node", "luarocks", "rg", "fd", "clang" }
+local deps = { "node", "luarocks", "rg", "fd", "clang", "tree-sitter" }
 
 ------------------------------------------------------------
 -- Autocmd groups
