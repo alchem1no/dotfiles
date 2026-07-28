@@ -75,8 +75,8 @@ Managing some JSON configs is done through JSON5 configs with translation to reg
     - [x] Zsh
     - [x] PowerShell
     - [ ] Starship theme for bare TTY
-    - [ ] Foot
-    - [ ] Kitty
+    - [x] Foot
+    - [x] Kitty
 
     - [ ] Hyprland
     - [ ] Hyprland plugins
@@ -90,7 +90,7 @@ Managing some JSON configs is done through JSON5 configs with translation to reg
     - [ ] Neovim
         - [ ] Read docs
         - [ ] Configure plugins
-        - [ ] Deal with keymaps
+        - [x] Deal with keymaps
 
     - [x] DeadBeeF
     - [x] OpenTabletDriver
