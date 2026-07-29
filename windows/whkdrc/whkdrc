@@ -20,7 +20,6 @@ alt + q                 : komorebic close
 # Launch apps
 # Make sure they are added to PATH
 alt + t                 : wt              # Terminal
-alt + return            : wt              # Terminal
 alt + c                 : neovide         # Editor
 alt + w                 : brave           # Browser 1st
 alt + shift + w         : firefox         # Browser 2nd
