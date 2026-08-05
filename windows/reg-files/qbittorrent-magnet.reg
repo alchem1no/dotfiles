@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+
+; Recreates the qBittorrent.Url.Magnet ProgId that UserChoice points to.
+; Adjust the paths below if your Scoop directory differs.
+
+[HKEY_CURRENT_USER\Software\Classes\qBittorrent.Url.Magnet]
+@="URL:Magnet link"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\qBittorrent.Url.Magnet\DefaultIcon]
+@="C:\\Users\\Glyder\\scoop\\apps\\qbittorrent-enhanced\\current\\qbittorrent.exe,1"
+
+[HKEY_CURRENT_USER\Software\Classes\qBittorrent.Url.Magnet\shell\open\command]
+@="\"C:\\Users\\Glyder\\scoop\\apps\\qbittorrent-enhanced\\current\\qbittorrent.exe\" \"%1\""
+
+; Fallback for if UserChoice ever gets cleared.
+
+[HKEY_CURRENT_USER\Software\Classes\magnet]
+@="URL:Magnet link"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\magnet\DefaultIcon]
+@="C:\\Users\\Glyder\\scoop\\apps\\qbittorrent-enhanced\\current\\qbittorrent.exe,1"
+
+[HKEY_CURRENT_USER\Software\Classes\magnet\shell\open\command]
+@="\"C:\\Users\\Glyder\\scoop\\apps\\qbittorrent-enhanced\\current\\qbittorrent.exe\" \"%1\""
